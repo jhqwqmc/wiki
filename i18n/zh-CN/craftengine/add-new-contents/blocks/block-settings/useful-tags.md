@@ -1,48 +1,48 @@
 ---
-description: Some useful block tags
+description: 一些有用的块标签
 ---
 
-# 🏷️ Useful Tags
+# 🏷️ 有用的标签
 
-## Mining
+## 采矿业：
 
-### minecraft:mineable/axe
+### 矿工:可雷性/坐标轴
 
-Allows axes to mine faster
+允许轴以更快的速度开采。
 
-### minecraft:mineable/hoe
+### 矿工：可雷/钩子
 
-Allows hoes to mine faster
+允许钩子更快地开采。
 
-### minecraft:mineable/pickaxe
+### 矿工:可雷/可选轴
 
-Allows pickaxes to mine faster
+允许选择轴更快地开采矿石
 
-### minecraft:mineable/shovel
+### 矿工:mineable/shovel
 
-Allows shovels to mine faster
+允许铲子以更快的速度开采。
 
-### minecraft:sword\_efficient
+### Minecraft:sword\_efficiency
 
-Allows swords to mine faster
+允许剑以更快的速度开采。
 
-## Special Mechanism
+## 特别机制
 
-### minecraft:climbable
+### 矿工：可攀登的
 
-Whether to allow players to climb (vines)
+是否允许玩家爬上(vines)
 
-### minecraft:beacon\_base\_blocks
+### 矿工:信标\_base\_blocks
 
-Whether it can be used as a base for a beacon
+是否可以用作信标的基础
 
 ### minecraft:fall\_damage\_resetting
 
-Whether to reset fall damage
+是否重置跌落伤害
 
 ### minecraft:soul\_fire\_base\_blocks
 
-Whether the fire above the block is soul fire
+方块上方的火是否是灵魂火焰。
 
 ### minecraft:infiniburn\_overworld
 
@@ -50,12 +50,12 @@ Whether the fire above the block is soul fire
 
 ### minecraft:infiniburn\_end
 
-Can the flame burn permanently in the corresponding dimension?
+火焰能够在相应的尺寸永久燃烧吗？
 
 ### minecraft:enchantment\_power\_provider
 
-Whether this block can provide enchantment level
+此方块是否能够提供附魔级别
 
-### minecraft:replaceable\_by\_trees
+### minecraft:replable\_by\_树
 
-Whether trees can replace this block when they grow
+树木生长时是否可以替换此块
