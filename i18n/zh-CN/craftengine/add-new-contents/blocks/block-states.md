@@ -1,6 +1,6 @@
 # 🔣 Block States
 
-## Introduction
+## 一. 导言
 
 In Minecraft's block system, each block has one or more block states. For example, wood has a facing direction, and leaves have different distances. These states determine how the block behaves and appears in the game.
 
