@@ -1,19 +1,19 @@
 ---
-description: How to resolve file conflict
+description: 如何解决文件冲突
 ---
 
-# ⚔️ File Conflict
+# ⚔️ 文件冲突
 
-## 👋 Introduction
+## 👋 简介
 
-When merging multiple resource packs, we often encounter conflicting files, such as pack.png, sounds.json, and so on. Configuring them into a single file can be quite tedious. Therefore, the plugin provides a conflict resolver that allows you to customize the solution for resolving conflicts. When the plugin detects conflicting files, it will search for the first solution that meets the conditions. If no suitable solution is found, it will issue a warning to the user in the console.
+当合并多个资源包时，我们常常遇到冲突的文件，例如pack.png、sounds.json等等。 将它们配置为单一文件可能是非常棘手的。 因此，插件提供了一个解决冲突的方法，允许你定制解决冲突的方法。 当插件检测到有冲突的文件时，它将搜索符合条件的第一个解决方案。 如果找不到合适的解决方案，它将向控制台中的用户发出警告。
 
 {% hint style="info" %}
-The configuration for conflict resolution is located in the `config.yml` file under the section `resource-pack.duplicated-files-handler`.&#x20;
+冲突解决配置位于`config.yml`部分`resourcack.repated-files-handler` 。&#x20;
 {% endhint %}
 
 {% hint style="danger" %}
-The plugin does not support the merging of shaders, as it is considered unstable.
+插件不支持Shaders合并，因为它被认为不稳定。
 {% endhint %}
 
 ```yaml
@@ -55,145 +55,145 @@ duplicated-files-handler:
 ```
 
 {% hint style="success" %}
-You can simply understand it as: **term** determines the matching rules, and **resolution** decides how to handle the conflicting files. Below are some available matching methods and resolution options:
+您可以简单地理解为：**条款** 决定匹配的规则，**解析** 决定如何处理冲突文件。 以下是一些可用的匹配方法和分辨率选项：
 {% endhint %}
 
-## 🔢 Matching Rule
+## :input_number: 匹配规则
 
-### all\_of
+### 全部\_共
 
-All conditions must be satisfied.
+必须满足所有条件。
 
 ```yaml
 type: all_of
-terms:
-  - type: xxx1
+条款:
+  - 类型: xxx1
     aaa: bbb
-  - type: xxx2
+  - 类型: xxx2
     ccc: ddd
 ```
 
-### any\_of
+### 任意\_共
 
-Satisfy any one of the conditions.
+满足任何一个条件。
 
 ```yaml
-type: any_of
-terms:
-  - type: xxx1
+type: any _of
+条款:
+  - 类型: xxx1
     aaa: bbb
-  - type: xxx2
-    ccc: ddd
+  - 类型: xxx2
+    ccc: dd
 ```
 
-### inverted
+### 反转
 
-Negate the result value of the current condition.
+负数当前条件的结果值。
 
 ```yaml
-type: inverted
-term:
-  type: xxx
+类型：反转
+术语：
+  类型：xxx
 ```
 
-### filename
+### 文件名
 
-Match the filename
+匹配文件名
 
 ```yaml
-type: filename
-name: "sounds.json"
+类型：文件名
+名称：“sounds.json”
 ```
 
-### exact
+### 准确的
 
-Match the exact path
+匹配准确路径
 
 ```yaml
-type: exact
-path: "assets/minecraft/lang/en_us.json"
+类型：精确
+路径：“assets/minecraft/lang/en_us.json”
 
-type: exact
-path: "pack.mcmeta"
+类型：精确
+路径：“pack.mcmeta”
 ```
 
-### parent\_path\_prefix / parent\_path\_suffix
+### 父级\_path\_prefix / parent\_path\_suffix
 
-Detect whether a path has a specific prefix or suffix
+检测路径是否有特定的前缀或后缀
 
 ```yaml
-type: parent_path_prefix 
-path: "assets/minecraft"
+类型: parent_path_prefix 
+路径: "assets/minecraft"
 
-type: parent_path_suffix
-path: "minecraft/models/item"
+类型: parent_path_subix
+路径: "minecraft/models/item"
 ```
 
-### contains
+### 包含
 
-Check if the path contains the characters
+检查路径是否包含字符
 
 ```yaml
-type: contains
-path: "custom/furniture"
+类型：包含
+路径：“自定义/家具”
 ```
 
-### pattern
+### 图案
 
-Use regex to match path
+使用正则表达式来匹配路径
 
 ```yaml
-type: pattern
-pattern: "Regex Here"
+类型：图案
+模式：“正则表达式”
 ```
 
 ## 🧑‍💻 Resolution
 
-### merge\_json
+### 合并\_json
 
-Combine two json files into one
+将两个json 文件合并为一个
 
 ```yaml
-type: merge_json
-deeply: true
+类型: 合并json
+深度: true
 ```
 
-### retain\_matching
+### 保留\_匹配
 
-When two files conflict, keep the one that meets the specified condition.
+当两个文件冲突时，保留符合指定条件的文件。
 
 ```yaml
-type: retain_matching
-term:
-  type: contains
-  path: "resources/default/resourcepack"
+类型: 保留
+条款:
+  类型: 包含
+  路径: "resources/default/resourcepack"
 ```
 
-### conditional
+### 条件
 
-Run a conditional resolution
+运行条件分辨率
 
 ```yaml
-type: conditional
-term:
-  type: xxx
-resolution:
-  type: xxx
+类型：条件
+术语：
+  类型：xxx
+分辨率：
+  类型：xxx
 ```
 
-### merge\_pack\_mcmeta
+### 合并\_pack\_mcmeta
 
-A special resolution customized for `pack.mcmeta`
+为 `pack.mcmeta` 定制的特殊分辨率
 
 ```yaml
-type: "merge_pack_mcmeta"
-description: "<gray>CraftEngine ResourcePack" # pack description
+类型: "merge_pack_mcmeta"
+描述: "<gray>CraftEngine ResourcePack" # 包描述
 ```
 
-### merge\_atlas
+### 合并\_地图集
 
-A special resolution customized for `atlases/xx.json`
+专为`atlases/xx.json`设计的特殊决议
 
 ```yaml
-type: "merge_atlas"
+类型：“合并地图集”
 ```
