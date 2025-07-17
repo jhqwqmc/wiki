@@ -1,51 +1,51 @@
 ---
-description: This page mainly explains how to add new categories to your server.
+description: 此页主要解释了如何将新类别添加到您的服务器。
 ---
 
-# 📂 Categories
+# 📂 类别
 
-The `category` is used to manage the arrangement order and classification rules of items when using the item browser.
+在使用项目浏览器时，`category`用于管理项目的安排顺序和分类规则。
 
-A basic configuration is as follows. Once you complete the setup, it will appear in your /ce menu.
+基本配置如下。 一旦您完成了设置，它将出现在您的 /ce 菜单中。
 
 ```yaml
-categories:
-  default:palm_tree:
-    name: "<!i><green><i18n:category.palm_tree></green>"
+类别:
+  默认🌴
+    名称: "<! ><green><i18n:category.palm_tree></green>"
     lore: []
     hidden: false
     priority: 1
     icon: default:palm_log
     list:
-      - default:palm_sapling
-      - default:palm_leaves
+      - default:palm_saping
+      - default:palm_log
       - default:palm_log
       - default:stripped_palm_log
       - default:palm_wood
-      - default:stripped_palm_wood
+      - default:striped_palm_palm_wood
       - default:palm_planks
 ```
 
-### Option Explanation
+### 选项解释
 
-- The `name` and `lore` determine the title and description of the category icon.
-- The `icon` represents the visual appearance of the item for this category, and you are required to configure the settings for this item within the plugin.
-- The `priority` determines the display order; the smaller the 'priority' value, the higher the precedence it has for presentation in the GUI.
-- The `hidden` attribute determines whether this category is displayed in the main menu. There may be instances where you wish to nest a category within another; in such cases, you would set this attribute to `true`. Relevant examples will be provided later.
-- In the `list`, you need to fill in items or categories (categories must be prefixed with a '#', for example, `#default:palm_tree` ).
+- `name`和`lore`决定类别图标的标题和描述。
+- `icon`表示此类别的项目的视觉外观。 并且您需要在插件中配置此项目的设置。
+- “优先级”决定显示顺序；“优先级”值越小，它在图形界面中显示的优先级就越高。
+- "隐藏" 属性决定该类别是否显示在主菜单中。 可能有些情况下，您希望在另一个类别中排出一个类别；在这种情况下，您会将此属性设置为“true”。 稍后将提供相关的例子。
+- 在 `list` 中，您需要填写项目或类别(类别必须以 '#' 作为前缀，例如`#default:palm_tree` )。
 
-### Sub Categories
+### 子类别
 
-At times, you may require a category configuration with the following structure, or even with deeper nesting. In such cases, you will need to flexibly utilize `hidden` and the `#` prefix.
+有时，您可能需要一个具有以下结构的类别配置，甚至需要更深的嵌套。 在这种情况下，您需要灵活地使用 "隐藏" 和 "#" 前缀。
 
 ```
 category_main
-  ├ category_1
-  ├ category_2
-  └ category_3
-     ├ item_1
-     ├ item_2
-     └ item_3
+  category_1
+  category_2
+  category_3
+     category_1
+     category_2
+     category_3
 ```
 
 ```yaml
@@ -106,16 +106,16 @@ categories:
       - default:fairy_flower
 ```
 
-<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/rcDhHCdZZA6vSyoL1mnX/image.png" alt=""><figcaption><p>main menu</p></figcaption></figure>
+<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/rcDhHCdZZA6vSyoL1mnX/image.png" alt=""><figcaption><p>主菜单</p></figcaption></figure>
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/6je6hSGuuxseDsIEwsTS/image.png" alt=""><figcaption><p>sub menu</p></figcaption></figure>
 
-<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/hZqKvQdnJcinwlIa9tae/image.png" alt=""><figcaption><p>furniture category</p></figcaption></figure>
+<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/hZqKvQdnJcinwlIa9tae/image.png" alt=""><figcaption><p>家具类别</p></figcaption></figure>
 
 ### Tip
 
 {% hint style="danger" %}
-You can also directly configure the category to which an item belongs within the item itself. However, please note that in such cases, we cannot guarantee the order in which it will be displayed within the category.
+您也可以直接配置项目本身所属的类别。 然而，请注意，在这种情况下，我们不能保证它在该类别中显示的顺序。
 {% endhint %}
 
 ```yaml
