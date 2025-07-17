@@ -1,9 +1,9 @@
-# 🔢 Client Bound Item Data
+# :input_number: 客户端绑定项目数据
 
-The "client-bound data" exists solely on the client side, and there are no related components on the server side. With the client-side item component, you can easily update item descriptions in real-time - even stuff like `item_model` and `custom_model_data`. Plus, CraftEngine items won't get permanently modified in creative mode like other plugins do!
+“客户端数据”仅存在于客户端，服务器端没有相关的组件。 通过客户端项目组件，您可以轻松地更新项目的实时描述，甚至像`item_model`和`custom_model_data`。 Plus, CraftEngine 项目不会像其他插件那样在创造性模式中永久修改！
 
 {% hint style="success" %}
-**Every option available in** [](<> "mention") **is applicable in** [client-bound-item-data](client-bound-item-data "mention")**.**
+**每个选项在** [](<> "提及") **适用于** [client-bound-item-data](client-bound-item-data "提及")**。**
 {% endhint %}
 
 ```yaml
@@ -20,7 +20,7 @@ items:
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FXZ8JiAryf19y0MtzHlor%2Fimage.png?alt=media&#x26;token=4e44fefa-ba07-44f0-b939-564c9d7e8722" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-`client-bound-data` is quite useful for players in adventure mode, allowing them to break certain real custom blocks on serverside.
+`client-bound-data` 对于冒险模式中的玩家非常有用，允许他们破坏服务器上某些真正的自定义块。
 
 ```yaml
 items:
