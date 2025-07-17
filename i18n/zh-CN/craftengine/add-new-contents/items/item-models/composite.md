@@ -1,10 +1,10 @@
 ---
-description: https://minecraft.wiki/w/Items_model_definition#composite
+description: https://minecraft.wiki/w/Items_model_definition#complete
 ---
 
-# 🧩 Composite
+# :cuble_postle: 合成的
 
-> Render multiple sub-models in the same space.
+> 在同一空间渲染多个子模型。
 
 ```yaml
 default:composite_item:
