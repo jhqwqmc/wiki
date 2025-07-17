@@ -1,11 +1,11 @@
-# 🧱 Block Item
+# 🧱 屏蔽项目
 
-A block item is an item that is bound to a block. You can configure its corresponding block ID here, or even the entire block configuration (but please note that doing so will result in the time taken to load the block being recorded under the item loading process). When you bind this behavior to an item, you can place it by right-clicking.
+一个块项是一个绑定到一个块的项目。 您可以在这里配置相应的块 ID 。 或者甚至整个区块配置(请注意这样做会导致加载该区块的时间被记录到项目加载过程中)。 当您将此行为绑定到某个项目时，您可以通过右键放置它。
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/0g6l5DAJuu3yiN1h9X0I/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-Please note, where a block can be placed is determined by its [block-behaviors](../../blocks/block-behaviors "mention"). For example, the sapling in the image can only be placed on blocks with the `dirt` or `farmland` tags because its block behavior is that of a `sapling block`.
+Please note, where a block can be placed is determined by its [block-behaviors](../../blocks/block-behaviors "mention"). 例如， 图像中的锯齿只能放在带有“dirt”或“farmland”标签的块上，因为它的块行为是一个“锯齿块”。
 {% endhint %}
 
 ```yaml
@@ -17,10 +17,10 @@ items:
       block: default:palm_sapling
 ```
 
-This is the simplest way to configure a block-item, but it assumes that you have already configured a block. If you are unsure how to configure a block, please refer to [blocks](../../blocks "mention").
+这是配置一个区块项的最简单方法，但它假定你已经配置了一个区块。 如果您不确定如何配置一个方块，请参阅 [blocks](../../blocks "提及")。
 
 {% hint style="success" %}
-If you find it too cumbersome to configure them separately, you can choose to configure them together. Below is an example. The format under `block` follows the standard block configuration format.
+如果您发现单独配置它们太麻烦，您可以选择一起配置。 下面是一个例子。 `block`下的格式遵循标准块配置格式。
 
 ```yaml
 items:
