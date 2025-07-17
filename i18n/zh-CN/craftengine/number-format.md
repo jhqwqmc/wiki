@@ -1,87 +1,87 @@
 ---
 description: >-
-  Plugin supports all the content mentioned in this article in all places where numbers are used. It can be used wherever you can think of it!
+  插件支持此文章中提到的所有在使用数字的地方的内容。 它可以在你想到它的任何地方使用！
 ---
 
-# 🔢 Number Format
+# :input_number: 数字格式
 
-### constant
+### 常量
 
-Provide a fixed numerical value.
+提供一个固定的数值。
 
 ```yaml
-type: constant
-value: 1
+类型: 常量
+值: 1
 ```
 
 {% hint style="success" %}
-In most cases, you can use the following abbreviated notation.
+在大多数情况下，您可以使用以下缩写符号。
 
 ```yaml
-count:
-  type: constant
-  value: 1
+计数:
+  类型: 常量
+  值: 1
 ```
 
 ->
 
 ```yaml
-count: 1
+计数: 1
 ```
 
 {% endhint %}
 
-### uniform
+### 均匀度
 
-Provide a random number within the given range.
+提供给定范围内的随机数字。
 
 ```yaml
-type: uniform
-min: 1
-max: 3
+类型: 均匀的
+最小: 1
+最大: 3
 ```
 
 {% hint style="success" %}
-In most cases, you can use the following abbreviated notation.
+在大多数情况下，您可以使用以下缩写符号。
 
 ```yaml
-count:
-  type: uniform
-  min: 1
-  max: 3
+计数：
+  类型：均匀
+  最小：1
+  最大值：3
 ```
 
 ->
 
 ```yaml
-count: 1~3
+计数: 1~3
 ```
 
-Both `min` and `max` also support the nested use of `number provider`.&#x20;
+`min`和最大`也支持嵌套使用 `number provider\`。&#x20;
 
 ```yaml
-count:
-  type: uniform
-  min:
-    type: uniform
-    min: 2
-    max: 7
-  max: "<papi:skilllevel_farming>*5~<papi:skilllevel_farming>*10"
+计数：
+  类型：均匀
+  最小：
+    类型：均匀
+    最小：2
+    最大值：7
+  最大值：“<papi:skilllevel_farming>*5~<papi:skilllevel_farming>*10”
 ```
 
 {% endhint %}
 
-### expression
+### 表达式
 
 [https://ezylang.github.io/EvalEx/references/references.html](https://ezylang.github.io/EvalEx/references/references.html)
 
 ```yaml
-type: expression
-expression: "20 + 70 / 2"
+输入：表达式
+表达式：“20 + 70 / 2”
 ```
 
 {% hint style="success" %}
-In most cases, you can use the following abbreviated notation.
+在大多数情况下，您可以使用以下缩写符号。
 
 ```yaml
 count:
