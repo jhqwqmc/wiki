@@ -5,86 +5,86 @@ description: https://minecraft.wiki/w/Items_model_definition#Tint_sources_types
 # 🎨 Tint
 
 {% hint style="success" %}
-All places where colors are used support the use of decimal or RGB format
+所有使用颜色的地方支持使用十进制或 RGB 格式
 
 ```yaml
-value: 16711680
+价值：16711680
 ```
 
 ```yaml
-value:
+值：
   - 255
   - 0
   - 0
-# or
-value:
+# 或
+值：
   - 1.0
   - 0.0
-  - 0.0
+  - 0.0 - 0.0
 ```
 
 ```yaml
-value: 255,0,0
-# or
-value: 1.0,0.0,0.0
+值：255,0,0
+# 或
+值：1.0,0.0.0.0
 ```
 
 {% endhint %}
 
-## minecraft:constant
+## 矿工:常量
 
 ```yaml
-type: "minecraft:constant"
-value: -12012264
+类型：“minecraft:constant”
+值：-12012264
 ```
 
 ## minecraft:custom\_model\_data
 
 ```yaml
-type: "minecraft:custom_model_data"
-index: 0
-default: -12012264
+类型：“minecraft:custom_model_data”
+索引: 0
+默认: -12012264
 ```
 
-## minecraft:dye
+## 矿工:dye
 
 ```yaml
-type: "minecraft:dye"
-default: -12012264
+类型: "minecraft:dye"
+默认值: -12012264
 ```
 
-## minecraft:firework
+## Minecraft:fireworks
 
 ```yaml
-type: "minecraft:firework"
-default: -12012264
+输入: "minecraft:firework"
+默认值: -12012264
 ```
 
-## minecraft:grass
+## 矿工:草料
 
 ```yaml
-type: "minecraft:grass"
-temperature: 0.5
-downfall: 0.5
+类型：“minecraft:grass”
+温度：0.5
+下降：0.5
 ```
 
-## minecraft:map\_color
+## Minecraft:map\_颜色
 
 ```yaml
-type: "minecraft:map_color"
-default: -12012264
+类型: "minecraft:map_color"
+默认值: -12012264
 ```
 
-## minecraft:potion
+## 矿工:药水
 
 ```yaml
-type: "minecraft:potion"
-default: -12012264
+类型：“minecraft:potion”
+默认为: -12012264
 ```
 
-## minecraft:team
+## 矿工:团队
 
 ```yaml
-type: "minecraft:team"
-default: -12012264
+输入: "minecraft:team"
+默认值: -12012264
 ```
