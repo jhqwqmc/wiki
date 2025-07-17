@@ -1,20 +1,20 @@
 ---
-description: This page mainly explains how to configure models for an item.
+description: 此页主要解释了如何配置项目模型。
 ---
 
-# 🟰 Item Models
+# :very_equals_sign: 项目模型
 
 {% hint style="warning" %}
-Since version 1.21.4, Minecraft has started supporting more complex item models. This allows you to create more dynamic variants for items. This tutorial is specifically for version 1.21.4 and above. For older versions, the plugin will downgrade the corresponding model files (note: this is not 100% compatible with older versions, as many conditions and model types do not exist in older versions).
+自1.21.4版本以来，Minecraft已经开始支持更复杂的项目模型。 这允许您为项目创建更多动态变体。 本教程专门针对1.21.4及以上版本。 对于旧版本，插件会降低相应模型文件的等级(注意：这与旧版本不兼容100%) 旧版本中不存在许多条件和型号)。
 {% endhint %}
 
 {% hint style="danger" %}
-If you discover that CraftEngine lacks some features in latest Minecraft version, you might submit an issue on GitHub to bring this to the attention of the developers.
+如果您发现CraftEngine 在最新版本中缺少一些功能， 您可以在 GitHub 上提交一个问题来提请开发者注意。
 {% endhint %}
 
-## Introduction
+## 一. 导言
 
-Let's take the simplest `minecraft:model` [model](item-models/model "mention") type as an example.
+让我们把最简单的`minecraft:model` [model](item-models/model "提及") 类型作为一个例子。
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/wSGX7wtV4qUdSwqNGm6Z/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -31,7 +31,7 @@ items:
 ```
 
 {% hint style="success" %}
-If you do not specify a `type`, it will default to using `minecraft:model`. Therefore, the configuration above is the same as the configuration below.
+如果您没有指定一个 `type`，它将默认使用 \`minecraft:model'。 因此，上述配置与以下配置相同。
 
 ```yaml
 items:
@@ -50,14 +50,14 @@ items:
 If you are unsure how to handle model `generation` and model `path` specification, please read [model-generation](../model-generation "mention").
 {% endhint %}
 
-From the above configuration, we can see that under the model section, you are required to fill in the type of the model and its corresponding parameters. Below is a list of all available model types. Some models (such as range dispatch, select, composite, and condition) support nested model usage. You can click on the link below to jump to the corresponding model type. Once you have read through all of them, we will proceed to discuss more complex examples.
+从上述配置中，我们可以在模型部分看到这一点。 您必须填写模型的类型及其相应参数。 下面是所有可用模型类型的列表。 一些模型(例如范围调度、选择、合成和条件)支持嵌套模型使用。 您可以点击下面的链接来跳转到相应的模型类型。 一旦你们阅读了所有这些，我们将着手讨论更复杂的例子。
 
 {% content-ref url="item-models/model" %}
-[model](item-models/model)
+[model](item-models/modell)
 {% endcontent-ref %}
 
 {% content-ref url="item-models/composite" %}
-[composite](item-models/composite)
+[composite](item-models/compose)
 {% endcontent-ref %}
 
 {% content-ref url="item-models/condition" %}
@@ -65,7 +65,7 @@ From the above configuration, we can see that under the model section, you are r
 {% endcontent-ref %}
 
 {% content-ref url="item-models/range-dispatch" %}
-[range-dispatch](item-models/range-dispatch)
+[range-dispatch](item-models/range-appailch)
 {% endcontent-ref %}
 
 {% content-ref url="item-models/select" %}
@@ -76,10 +76,10 @@ From the above configuration, we can see that under the model section, you are r
 [special](item-models/special)
 {% endcontent-ref %}
 
-## Examples
+## 示例：
 
 {% hint style="info" %}
-In the following example, a template for automatically generating a 2D crossbow is created by combining `condition`, `model`, and `range_dispatch`.
+在下面的例子中，通过结合`condition`、`model`和`range_dispatch`来创建一个自动生成2D十字弓的模板。
 {% endhint %}
 
 ```yaml
@@ -143,34 +143,34 @@ templates:
             "layer0": "${pulling_0_texture}"
 ```
 
-## Legacy Model
+## 传统模型
 
-**"Legacy model"** specifically refers to the item model format used in versions **1.21.3 and earlier**. You can specify the legacy item model format using the **legacy-model** section. However, in most cases, you don’t need to do this because the plugin will automatically convert **1.21.4 item models** into the legacy format whenever possible. You should only use this configuration section if there are issues with the legacy model format.
+**“传统模型”**具体指在版本**1.21.3及之前**中使用的项目模型格式。 您可以使用 **legacy-model** 部分指定旧项目模型格式。 然而，在大多数情况下，你不需要这样做，因为插件将在可能的情况下自动将 **1.21.4 项模型** 转换成遗留格式。 只有在遗留模型格式出现问题时，您才应该使用此配置部分。
 
 ```yaml
 items#topaz_gears:
   default:topaz_rod:
     material: fishing_rod
-    item-model: default:topaz_rod
-    custom-model-data: 1000
+    item: default:topaz_rod
+    custom-model数据: 1000
     settings:
       tags:
         - "default:topaz_tools"
     data:
-      item-name: "<!i><#FF8C00><i18n:item.topaz_rod>"
+      item-name: "<! ><#FF8C00><i18n:item.topaz_rod>"
       tooltip-style: minecraft:topaz
     model:
-      template: default:model/simplified_fishing_rod_2d
-      arguments:
-        path: minecraft:item/custom/topaz_rod
-        cast_path: minecraft:item/custom/topaz_rod_cast
-    # If you specify a model in the legacy-model section, 
-    # the plugin will use your manually defined model instead of 
-    # relying on the auto-converted legacy format.
+      template: default:model/similed_fishing_rod_2d
+      参数:
+        路径: minecraft:item/custom/topaz_rod
+        cast_path: minecraft:items/custom/topaz_rod_cast
+    # 如果你在legacy-model中指定一个模型。 
+    # 插件将使用您手动定义的模型而不是 
+    # 依靠自动转换旧格式。
     legacy-model:
-      path: minecraft:item/custom/topaz_rod
-      overrides:
-        - path: minecraft:item/custom/topaz_rod_cast
-          predicate: 
+      路径: minecraft:item/custom/topaz_rod
+      覆盖:
+        - 路径: minecraft:item/custom/topaz_rod_caste
+          prediction: 
             cast: 1
 ```
