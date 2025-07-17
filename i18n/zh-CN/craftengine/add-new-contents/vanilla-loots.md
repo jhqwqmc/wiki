@@ -1,47 +1,47 @@
 ---
-description: This page mainly explains how to configure loot for vanilla stuff
+description: 这个页面主要解释如何为原版
 ---
 
 # 🗃️ Vanilla Loots
 
-## Introduction
+## 一. 导言
 
-Minecraft's native loot system is already quite robust, but it has one notable shortfall: it cannot incorporate certain plugin-specific elements such as placeholder checks, permissions, and other advanced functionalities. Additionally, configuring vanilla data packs is a cumbersome process, making the overriding of default loot tables particularly challenging. To address this, the plugin offers an override feature for the vanilla loot system. You can refer to the following example to get started quickly. In the text below, the "..." represents loot configurations. It is advisable to first read [loot-table](loot-table "mention") to understand how to configure loot effectively.
+Minecraft的原生战利品系统已经相当健全， 但它有一个明显的缺陷：它不能包含某些特定插件元素，如占位符检查、权限和其他高级功能。 此外，配置原版数据包是一个繁琐的过程，使默认的掠夺表的覆盖面更加困难。 要解决这个问题，插件为原版掠夺系统提供了覆盖功能。 您可以引用下面的示例来快速开始。 在下面的文本中，"..."表示抢劫配置。 最好是首先阅读 [loot-table](loot-table "提及") 以了解如何有效地配置掠夺。
 
-## Block Loots
+## 屏蔽护腿
 
 ```yaml
-vanilla-loots:
-  minecraft:grass_loot:
+香草外观:
+  minecraft:grass_lot:
     type: block
     target: "minecraft:grass"
-    # Whether to overwrite the vanilla loots
-    override: false
-    loot:
-      ...
+    # 是否覆盖原版图.
+    覆盖: false
+    look:
+...
 ```
 
 ```yaml
-vanilla-loots:
-  minecraft:grass_loot:
+可anilla-looks:
+  minecraft:grass_lot:
     type: block
-    target:
-      - minecraft:wheat[age=0] # use a detailed state
+    type:
+      - minecraft:wheat[age=0] # 使用一个详细的状态
       - minecraft:wheat[age=1]
-    override: false
-    loot:
-      ...
+    覆盖: false
+    look:
+...
 ```
 
-## Entity Loots
+## 实体贷款机制
 
 ```yaml
-vanilla-loots:
-  minecraft:sheep_loot:
+香草外观:
+  minecraft:sheep_look:
     type: entity
     target: "minecraft:sheep"
-    # Whether to overwrite the vanilla loots
-    override: false
-    loot:
-      ...
+    # 是否覆盖原版图
+    覆盖: false
+    look:
+...
 ```
