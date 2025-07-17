@@ -1,216 +1,216 @@
-# ⚖️ Conditions
+# :balanc_scale : 条件
 
 {% hint style="success" %}
-Adding `!` before a condition type inverts its logic. For instance:
+在条件类型反转之前添加`!`。 例如：
 
 ```yaml
-type: "!permission"
-permission: "craftengine.admin"
+输入: "!permission"
+权限: "craftengine.admin"
 ```
 
 {% endhint %}
 
-### any\_of
+### 任意\_共
 
-Satisfy any one of the conditions.
+满足任何一个条件。
 
 ```yaml
-type: any_of
-terms:
-  - type: xxx
-  - type: xxx
+类型：任何
+条款：
+  - 类型：xxx
+  - 类型：xxx
 ```
 
-### all\_of
+### 全部\_共
 
-All conditions must be satisfied.
+必须满足所有条件。
 
 ```yaml
-type: all_of
-terms:
-  - type: xxx
-  - type: xxx
+类型: all_of
+条款:
+  - 类型: xxx
+  - 类型: xxx
 ```
 
-### inverted
+### 反转
 
-Negate the result value of the current condition.
+负数当前条件的结果值。
 
 ```yaml
-type: inverted
-term:
-  type: xxx
+类型：反转
+术语：
+  类型：xxx
 ```
 
-### falling\_block
+### 掉落\_块
 
-Check whether the drop was caused by the block falling.
+检查拖放是否由方块跌落造成。
 
 ```yaml
-type: falling_block
+类型：跌落块
 ```
 
-### survives\_explosion
+### 存活\_爆炸物
 
-Detect whether it is possible to survive the explosion.
+检测爆炸是否能够幸存。
 
 ```yaml
-type: survives_explosion
+类型：幸存者_爆炸数
 ```
 
-### match\_item
+### 匹配\_项目
 
-Match the item in hand.
+匹配手头的项目。
 
 ```yaml
-type: match_item
-id: "minecraft:iron_pickaxe"
-regex: false # whether to use regex matching
+输入：匹配项
+id：“minecraft:iron_pickaxe”
+regex：false # 是否使用正则表达式匹配
 ```
 
 ```yaml
-type: match_item
+输入: 匹配项目
 id: 
   - "minecraft:iron_pickaxe"
   - "minecraft:stone_pickaxe"
-regex: false # whether to use regex matching
+regex: false # 是否使用正则表达式匹配
 ```
 
-### match\_block\_property
+### 匹配\_block\_property
 
-Match the block state property
+匹配方块状态属性
 
 ```yaml
-type: match_block_property
-properties:
-  age: 3
+类型: match_block_property
+属性:
+  年龄: 3
 ```
 
-### enchantment
+### 附魔效果
 
-Detect the enchantments on the item in hand.
+检测手头物品上的附魔。
 
 ```yaml
-type: enchantment
-predicate: minecraft:silk_touch>=1 # > >= = < <=
+类型：附魔
+预测：minecraft:silk_touch>=1 # >= < =
 ```
 
-### table\_bonus
+### 表格\_红包
 
-Provide different success probabilities at various enchantment levels.
+在不同附属级别提供不同的成功概率。
 
 ```yaml
-type: table_bonus
-enchantment: minecraft:fortune
-chances:
+type: table_bont
+附魔：minecraft:tornee
+机会：
   - 0.1
   - 0.5
   - 0.8
   - 1
 ```
 
-### random
+### 随机的
 
 ```yaml
-type: random
-value: 0.1 # 10%
+类型：随机
+值：0.1 # 10%
 ```
 
-### permission
+### 权限
 
-Checks if the player has the permission
+检查玩家是否有权限
 
 ```yaml
-type: permission
-permission: "craftengine.admin"
+类型: 权限
+权限: "craftengine.admin"
 ```
 
-### expression
+### 表达式
 
-Checks if the expression returns `true`
+检查是否表达式返回 `true`
 
 ```yaml
-type: expression
+输入：表达式
 # https://ezylang.github.io/EvalEx/references/references.html
-expression: "<papi:farming_level> >= 10"
+expression: "<papi:farming_level> > = 10"
 ```
 
-### string\_equals
+### string\_等于
 
-Determines if the two values are equal
+确定两个值是否等于
 
 ```yaml
-type: string_equals
-value1: "<arg:player.name>"
+type: string_等于
+value1: "<arg:player.name>
 value2: "Player_A"
 ```
 
-### string\_contains
+### 字符串\_contained
 
-Determines if value1 contains value2
+决定值1是否包含值2
 
 ```yaml
-type: string_contains
-value1: "<arg:player.name>"
-value2: "A"
+类型：string_contain
+值1："<arg:player.name>"
+值2："A"
 ```
 
 ### string\_regex
 
-Determines if value matches the pattern
+确定值是否匹配图案
 
 ```yaml
-type: string_regex
-value: "<arg:player.name>"
+类型: string_regex
+值: "<arg:player.name>"
 regex: "[a-Z]"
 ```
 
-### is\_null
+### 为\_null
 
-Checks if the argument is null
+检查参数是否为空
 
 ```yaml
-type: is_null
-argument: "player.main_hand_item"
+类型: is_null
+参数: "player.main_hand_item"
 ```
 
-### hand
+### 手
 
-Checks the interaction hand
+检查互动手部
 
 ```yaml
 type: hand
 hand: main_hand # off_hand
 ```
 
-### on\_cooldown
+### 开启\_冷却时间
 
-Checks if player is on cooldown (use `set_cooldown` function to set cooldown for player)
+检查玩家是否处于冷却状态(使用 set_coldown" 函数为玩家设置冷却时间)
 
 ```yaml
-type: on_cooldown
-id: my_cooldown_id
+类型：on_coldown
+id：my_coldown_id
 ```
 
 {% hint style="info" %}
-Example usage
+示例使用
 
 ```yaml
-events:
-  - on: right_click
-    functions:
-      - type: set_cooldown
+事件:
+  - 在右键点击
+    函数:
+      - 类型: set_coldown
         id: test
-        time: 30s
-      - type: command
-        command: give <arg:player.name> minecraft:apple
-    conditions:
-      - type: "!on_cooldown"
-        id: test
+        time : 30 s
+      - 类型: 命令
+        命令: 给出 <arg:player.name> minecraft:appe
+    条件:
+      - 类型: "! n_冷却"
+        id: 测试
 ```
 
 {% endhint %}
 
 {% hint style="warning" %}
-More conditions are coming...
+更多条件正在出现...
 {% endhint %}
