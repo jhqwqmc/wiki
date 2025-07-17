@@ -1,99 +1,99 @@
-# 🔗 Chain Arguments
+# 🔗 链式参数
 
-## Introduction
+## 一. 导言
 
-**Chain Arguments** represent a dot-notation syntax (connected by `.`) used to access object-related parameters in a hierarchical manner.
+**Chain 参数** 表示一个记事语法(通过 `.`连接)，用来以分级方式访问与对象相关的参数。
 
-For example, in an interaction event where we can access the player instance, we can retrieve additional parameters through this object.
+例如，在我们可以访问玩家实例的交互事件中，我们可以通过此对象检索额外的参数。
 
-By chaining property accessors like:
+通过连锁属性存取器如：
 
-- `player.world` → Gets the player's current world
-- `world.name` → Gets the name of that world
+- `player.world` → 获取玩家当前的世界
+- `world.name` -> 获取这个世界的名称
 
-We can combine them into a parameter tag format like `<arg:player.world.name>`. This tag will dynamically return the name of the world the player is currently in.
+我们可以将它们合并为一个参数标签格式，如`<arg:player.world.name>`。 此标签将动态返回当前玩家所在世界的名称。
 
-## Objects
+## 对象
 
-### player
+### 播放器
 
-| parameter                                                    | type                             | description                      |
-| ------------------------------------------------------------ | -------------------------------- | -------------------------------- |
-| x                                                            | double                           | the x coordinate of the player   |
-| y                                                            | double                           | the y coordinate of the player   |
-| z                                                            | double                           | the z coordinate of the player   |
-| block\_x                               | int                              | the x coordinate of the player   |
-| block\_y                               | int                              | the y coordinate of the player   |
-| block\_z                               | int                              | the z coordinate of the player   |
-| name                                                         | string                           | the name of the player           |
-| uuid                                                         | uuid                             | the uuid of the player           |
-| is\_flying                             | boolean                          | check the fly state              |
-| is\_sneaking                           | boolean                          | check the sneak state            |
-| gamemode                                                     | string                           | the gamemode of the player       |
-| main\_hand\_item | [#item](#item "mention")         | the item in main hand            |
-| off\_hand\_item  | [#item](#item "mention")         | the item in off hand             |
-| world                                                        | [#world](#world "mention")       | the world where the player is in |
-| position                                                     | [#position](#position "mention") | the position of the player       |
+| 参数                                                       | 类型                    | 描述       |
+| -------------------------------------------------------- | --------------------- | -------- |
+| x                                                        | 双精度                   | 玩家的 x 坐标 |
+| 年                                                        | 双精度                   | 玩家的 y 坐标 |
+| z                                                        | 双精度                   | 玩家的 z 坐标 |
+| 块\_x                               | 整数                    | 玩家的 x 坐标 |
+| 块\_y                               | 整数                    | 玩家的 y 坐标 |
+| 块\_z                               | 整数                    | 玩家的 z 坐标 |
+| 名称                                                       | 字符串                   | 玩家的名称    |
+| uuid                                                     | uuid                  | 玩家的 uuid |
+| 是\_飞了                              | boolean               | 检查飞行状态   |
+| 是\_潜行的                             | boolean               | 检查潜行状态   |
+| 游戏模式                                                     | 字符串                   | 玩家的游戏模式  |
+| 主\_hand\_项目  | [#item](#item "提及")   | 主手中的物品   |
+| 关闭\_hand\_项目 | [#item](#item "提及")   | 手中的物品    |
+| 世界                                                       | [#world](#world "提及") | 玩家所在的世界  |
+| 位置                                                       | [#position](#位置“提及")  | 玩家的位置    |
 
-### block
+### 封禁
 
-| parameter                          | type                                                          | description                     |
-| ---------------------------------- | ------------------------------------------------------------- | ------------------------------- |
-| x                                  | double                                                        | the x coordinate of the block   |
-| y                                  | double                                                        | the y coordinate of the block   |
-| z                                  | double                                                        | the z coordinate of the block   |
-| block\_x     | int                                                           | the x coordinate of the block   |
-| block\_y     | int                                                           | the y coordinate of the block   |
-| block\_z     | int                                                           | the z coordinate of the block   |
-| world                              | [#world](#world "mention")                                    | the world where the block is in |
-| block\_state | [#block\_state](#block_state "mention") | the blockstate of the block     |
-| position                           | [#position](#position "mention")                              | the position of the block       |
+| 参数                          | 类型                                                       | 描述       |
+| --------------------------- | -------------------------------------------------------- | -------- |
+| x                           | 双精度                                                      | 方块的 x 坐标 |
+| 年                           | 双精度                                                      | 方块的 y 坐标 |
+| z                           | 双精度                                                      | 方块的 z 坐标 |
+| 块\_x  | 整数                                                       | 方块的 x 坐标 |
+| 块\_y  | 整数                                                       | 方块的 y 坐标 |
+| 块\_z  | 整数                                                       | 方块的 z 坐标 |
+| 世界                          | [#world](#world "提及")                                    | 方块所在的世界  |
+| 块\_状态 | [#block\_state](#block_state "提及") | 方块的封禁状态  |
+| 位置                          | [#position](#位置“提及")                                     | 方块的位置    |
 
-### world
+### 世界
 
-| parameter | type   | description           |
-| --------- | ------ | --------------------- |
-| name      | string | the name of the world |
-| uuid      | uuid   | the uuid of the world |
-| time      | long   | the time of the world |
+| 参数   | 类型   | 描述     |
+| ---- | ---- | ------ |
+| 名称   | 字符串  | 世界名称   |
+| uuid | uuid | 世界之uid |
+| 时间   | 长    | 世界的时间  |
 
-### block\_state
+### 块\_状态
 
-| parameter | type | description |
-| --------- | ---- | ----------- |
-|           |      |             |
-|           |      |             |
-|           |      |             |
+| 参数 | 类型 | 描述 |
+| -- | -- | -- |
+|    |    |    |
+|    |    |    |
+|    |    |    |
 
-### position
+### 位置
 
-| parameter                      | type                       | description      |
-| ------------------------------ | -------------------------- | ---------------- |
-| x                              | double                     | the x coordinate |
-| y                              | double                     | the y coordinate |
-| z                              | double                     | the z coordinate |
-| block\_x | int                        | the x coordinate |
-| block\_y | int                        | the y coordinate |
-| block\_z | int                        | the z coordinate |
-| world                          | [#world](#world "mention") | the world        |
+| 参数                         | 类型                    | 描述   |
+| -------------------------- | --------------------- | ---- |
+| x                          | 双精度                   | x坐标  |
+| 年                          | 双精度                   | y坐标  |
+| z                          | 双精度                   | z 坐标 |
+| 块\_x | 整数                    | x坐标  |
+| 块\_y | 整数                    | y坐标  |
+| 块\_z | 整数                    | z 坐标 |
+| 世界                         | [#world](#world "提及") | 世界   |
 
-### item
+### 项目
 
-| paramter                                                        | type    | description                       |
-| --------------------------------------------------------------- | ------- | --------------------------------- |
-| id                                                              | string  | the id of the item                |
-| custom\_model\_data | int     | the custom model data of the item |
-| is\_custom                                | boolean | checks if the item is custom      |
+| paramter                                                     | 类型      | 描述         |
+| ------------------------------------------------------------ | ------- | ---------- |
+| id                                                           | 字符串     | 项目的 id     |
+| 自定义\_model\_data | 整数      | 项目的自定义模型数据 |
+| 是\_自定义                                 | boolean | 检查项目是否为自定义 |
 
-### furniture
+### 家具：
 
-| parameter                          | type                             | description                       |
-| ---------------------------------- | -------------------------------- | --------------------------------- |
-| id                                 | string                           | the id of the furniture           |
-| uuid                               | uuid                             | the uuid of the furniture         |
-| anchor\_type | string                           | the anchor type of the furniture  |
-| x                                  | double                           | the x coordinate of the furniture |
-| y                                  | double                           | the y coordinate of the furniture |
-| z                                  | double                           | the z coordinate of the furniture |
-| position                           | [#position](#position "mention") | the position of the furniture     |
+| 参数                           | 类型                   | 描述       |
+| ---------------------------- | -------------------- | -------- |
+| id                           | 字符串                  | 家具ID的    |
+| uuid                         | uuid                 | 家具的uuid  |
+| 锚点\_类型 | 字符串                  | 家具的锚点类型  |
+| x                            | 双精度                  | 家具的 x 坐标 |
+| 年                            | 双精度                  | 家具的 y 坐标 |
+| z                            | 双精度                  | 家具的 z 坐标 |
+| 位置                           | [#position](#位置“提及") | 家具位置     |
 
