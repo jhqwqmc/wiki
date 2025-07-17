@@ -1,21 +1,21 @@
-# 🪻 Bush Block
+# :hyacin：布什块
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/RFE0okQV9AmYrWNZNon9/image.png" alt=""><figcaption></figcaption></figure>
 
-[bush-block](bush-block "mention") is a type of block behavior that must grow on specific supporting blocks. If the block beneath it is destroyed, or if it is found to be in an invalid position, it will either break or drop as an item.
+[bush-block](bush-block "提及") 是一种必须在特定支持方块上增长的方块行为。 如果该方块下方被摧毁，或者它被发现处于无效的位置， 它会被打断或丢弃。
 
 ```yaml
 blocks:
   default:fairy_flower:
-    behavior:
-      type: bush_block
-      stackable: false
-      blacklist: false # use blacklist mode
-      delay: 0
-      bottom-blocks:
+    行为:
+      类型: bush_block
+      stack: false
+      blacklist: false # 使用黑名单模式
+      延迟: 0
+      底部块:
         - custom:xxx
         - minecraft:stone
-      bottom-block-tags:
+      底部块标签:
         - minecraft:dirt
         - minecraft:farmland
 ```
