@@ -1,28 +1,28 @@
-# 🕹️ Block Behaviors
+# 🕹️ 阻止行为
 
-CraftEngine implements a comprehensive physical property system, allowing you to freely combine multiple block behaviors! Here are two simple examples: one demonstrating a single block behavior and another showing a combination of multiple block behaviors.
+CraftEngine 实现一个全面的物理属性系统，允许您自由结合多个方块行为！ 这里有两个简单的例子：一个显示单个方块行为，另一个显示多个方块行为的组合。
 
 ```yaml
-# single behavior
-blocks:
-  default:fairy_flower:
-    behavior:
-      type: bush_block
-      bottom-block-tags:
+# 单个行为
+块:
+  默认:fairy_flower:
+    行为:
+      类型: bush_block
+      底部块标签:
         - minecraft:dirt
         - minecraft:farmland
 ```
 
 ```yaml
-# combined behaviors
-blocks:
-  default:gunpowder_block:
-    behaviors:
-      - type: concrete_powder_block
-        solid-block: default:solid_gunpowder_block
-      - type: falling_block
+# 组合行为
+块:
+  default:followder_block:
+    行为:
+      - 类型: commande_powder_block
+        solid-block: default:solid_followder_block
+      - 类型: falling_block
 ```
 
 {% hint style="danger" %}
-Please note: combining some block behaviors may cause unexpected conflicts. If you run into problems, please contact support and we will try to resolve any conflicts.
+请注意：合并一些块行为可能会导致意外冲突。 如果你遇到问题，请联系支持者，我们会尝试解决任何冲突。
 {% endhint %}
