@@ -1,0 +1,2 @@
+# 🕹️ Furniture Behaviors
+
