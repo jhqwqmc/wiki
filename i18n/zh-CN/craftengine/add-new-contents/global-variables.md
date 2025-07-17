@@ -1,6 +1,6 @@
-# 🔠 Global Variables
+# 🔠 全局变量
 
-### Example Usage
+### 示例用法
 
 ```yaml
 global-variables:
