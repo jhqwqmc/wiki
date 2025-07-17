@@ -4,125 +4,125 @@ description: https://minecraft.wiki/w/Items_model_definition#special
 
 # 👻 Special
 
-> Render a special model.
+> 渲染一个特殊模型。
 
 {% hint style="info" %}
-When using "minecraft:special," you need to specify a `speical mode` type. `path` argument is required for the base model rendering.
+当使用 "minecraft:special," 时，您需要指定 "speical mode" 类型。 `path`参数是基础模型渲染所必需的。
 {% endhint %}
 
 ```yaml
-default:gui_head_size_1:
-  model:
-    type: minecraft:special
-    path: minecraft:item/custom/gui_head_size_1
-    model:
-      type: minecraft:head
+默认:gui_head_size_1:
+  模型:
+    类型: minecraft:special
+    路径: minecraft:item/custom/gui_head_size_1
+    模型:
+      类型: minecraft:head
       kind: player
 ```
 
-## Available Special Model Types
+## 可用的特殊模型类型
 
-check [https://minecraft.wiki/w/Items\_model\_definition#special](https://minecraft.wiki/w/Items_model_definition#special) for the usage of each argument
+检查[https://minecraft.wiki/w/Items\_model\_definition#special](https://minecraft.wiki/w/Items_model_definition#special) 每个参数的用法
 
-### minecraft:trident
+### Minecraft:trident
 
-> Render a trident.
+> 渲染试用。
 
-### minecraft:conduit
+### 矿工:管道
 
-> Render conduit.
+> 渲染管道。
 
-### minecraft:shield
+### 矿工:盾
 
-> Render a shield. Uses patterns from `minecraft:banner_patterns` component and color from `minecraft:base_color` component.
+> 渲染盾牌。 使用 `minecraft:banner_patterns` 组件中的模式和 `minecraft:base_color` 组件中的颜色。
 
 ### minecraft:decorated\_pot
 
-> Render a decorated pot. Uses values from `minecraft:pot_decorations` component.
+> 渲染一个装饰药水 使用 `minecraft:pot_decorations` 组件中的值。
 
-### minecraft:hanging\_sign
+### Minecraft:hanging\_sign
 
-> Renders a hanging sign.
+> 渲染悬挂签名。
 
 ```yaml
 model:
-  type: "minecraft:hanging_sign"
-  wood-type: "oak"
-  texture: ...
+  类型: "minecraft:hanging_sign"
+  woodtype: "oak"
+  text: ...
 ```
 
 ### minecraft:standing\_sign
 
-> Renders a standing sign.
+> 呈现了一个长期的标志。
 
 ```yaml
 model:
-  type: "minecraft:standing_sign"
-  wood-type: "oak"
-  texture: ...
+  类型: "minecraft:standing_sign"
+  woodtype: "oak"
+  text: ...
 ```
 
-### minecraft:head
+### 矿工:头
 
-> Render a head. \[Uses profile from `minecraft:profile` component when applicable. (1.21.4-1.21.5)]
+> 渲染头部。 \[在适用情况下使用 `minecraft:profile`组件的配置文件。 (1.21.4-1.21.5)]
 
 ```yaml
 model:
-  type: "minecraft:head"
-  kind: player
-  texture: ...
-  animation: 0.0
+  类型: "minecraft:head"
+  类型: 玩家
+  纹理: ...
+  动画: 0.0
 ```
 
 ### minecraft:player\_head (1.21.6+)
 
-> Render a head. Uses profile from `minecraft:profile` component when applicable.
+> 渲染头部。 在适用情况下使用 `minecraft:profile`组件的配置文件。
 
 ```yaml
-model:
-  type: "minecraft:player_head"
+模型：
+  类型：“minecraft:player_head”
 ```
 
-### minecraft:chest
+### 矿工:箱子
 
-> Render a single chest.
+> 渲染单个箱子。
 
 ```yaml
-model:
-  type: "minecraft:chest"
+型号:
+  类型: "minecraft:chest"
   openness: 0.0
-  texture: ...
+  纹理：
 ```
 
 ### minecraft:**shulker\_box**
 
-> Render a shulker box.
+> 渲染潜影箱。
 
 ```yaml
-model:
-  type: "minecraft:shulker_box"
+型号:
+  类型: "minecraft:shulker_box"
   openness: 0.0
-  orientation: up
-  texture: ...
+  方向: up
+  纹理: ...
 ```
 
-### minecraft:**bed**
+### minecraft：**bed**
 
-> Render a whole bed.
+> 渲染整张床。
 
 ```yaml
-model:
-  type: "minecraft:bed"
-  texture: ...
+模型:
+  类型: "minecraft:bed"
+  纹理: ...
 ```
 
-### minecraft:**banner**
+### minecraft：**banner**
 
-> Render a banner with patterns from `minecraft:banner_patterns` component.
+> 从 `minecraft:banner_patterns` 组件渲染图案横幅。
 
 ```yaml
-model:
-  type: "minecraft:bed"
-  color: white
+模型:
+  类型: "minecraft:bed"
+  颜色: 白色
 ```
 
