@@ -1,67 +1,67 @@
-# 🪑 Furniture Item
+# 🪑 家具项目
 
-A furniture item is an item that is bound to a piece of furniture. You can configure its corresponding furniture ID here, or even the entire furniture configuration (but please note that doing so will result in the time taken to load the furniture being recorded under the item loading process). When you bind this behavior to an item, you can place it by right-clicking.
+家具是一件附有家具的物品。 您可以在这里配置相应的家具ID。 或甚至整个家具配置(请注意这样做会造成在项目装载过程中记录的家具花费时间)。 当您将此行为绑定到某个项目时，您可以通过右键放置它。
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/SYOQXH6ZY0VcGYGZLdgN/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-items:
-  default:bench:
-    behavior:
-      type: furniture_item
-      furniture: default:bench
+项目:
+  默认: 基准:
+    行为:
+      类型: gabourure_item
+      家具: 默认:bench
 ```
 
-This is the simplest way to configure a furniture-item, but it assumes that you have already configured a piece of furniture. If you are unsure how to configure a piece of furniture, please refer to [furniture](../../entities/furniture "mention").
+这是配置家具的最简单方法，但它假定您已经配置了一件家具。 如果您不确定如何配置一件家具，请参阅 [furniture](../../entities/furniture "提及")。
 
 {% hint style="success" %}
-If you find it too cumbersome to configure them separately, you can choose to configure them together. Below is an example. The format under `furniture` follows the standard furniture configuration format.
+如果您发现单独配置它们太麻烦，您可以选择一起配置。 下面是一个例子。 “家具”下的格式遵循标准家具配置格式。
 
 ```yaml
-items:
-  default:bench:
-    material: paper
-    custom-model-data: 2000
-    data:
-      display-name: "<!i>Bench"
-    model:
-      type: "minecraft:model"
-      path: "minecraft:item/custom/bench"
-    behavior:
-      type: furniture_item
-      furniture:
+项目：
+  默认：基准：
+    材料：
+    定制模型数据：2000
+    数据：
+      显示名称：“<！ >基准”
+    型号:
+      型号: "minecraft:model"
+      路径: "minecraft:item/custom/bey"
+    行为:
+      型号: gabourure_item
+      abourment:
         settings:
           item: default:bench
           sounds:
-            break: minecraft:block.bamboo_wood.break
-            place: minecraft:block.bamboo_wood.place
-        placement:
-          ground:
-            rules:
-              rotation: EIGHT
+            bre: minecraft:block. ambo_wood.bret
+            位置：minecraft:block.bambo_wood。 lace
+        place :
+          Framework :
+            rules :
+              rotation: EIGHTT
               alignment: CENTER
-            elements:
+            element:
               - item: default:bench
-                display-transform: NONE
-                billboard: FIXED
-                position: 0.5,0,0
-                translation: 0,0.5,0
-            hitboxes:
-              - position: 0,0,0
-                width: 1
-                height: 1
-                interactive: true
-                seats:
-                  - 0,0,-0.1 0
-              - position: 1,0,0
-                width: 1
-                height: 1
-                interactive: true
-                seats:
-                  - 1,0,-0.1 0
-        loot:
-          template: loot_table:normal
-          arguments:
+                display-transform: NOE
+                bullet: FIXED
+                position: 0. 0,0
+                翻译：0,0 ,0
+            点击箱：
+              - 位置：0,，
+                宽度：1
+                高度：1
+                交互式：真正
+                座位：
+                  - 0 ,-0。 0
+              - 位置： 1,0,
+                宽度：1
+                高度：1
+                交互式：真正
+                座位：
+                  - 1 ,-0。 0
+        观看:
+          模板: lot_table:normal
+          参数:
             item: default:bench
 ```
 
