@@ -30,7 +30,7 @@ items:
         path: "minecraft:item/custom/model_3"
 ```
 
-## Available Properties
+## 可用属性
 
 check [https://minecraft.wiki/w/Items\_model\_definition#select](https://minecraft.wiki/w/Items_model_definition#select) for the usage of each argument
 
@@ -68,7 +68,7 @@ property: "minecraft:block_state"
 block-state-property: "facing"
 ```
 
-### minecraft:**component (1.21.5+)**
+### minecraft:**组件 (1.21.5+)**
 
 > Return value from a [component](https://minecraft.wiki/w/Data_component_format). If the selected value comes from a registry and the current datapacks does not provide it, the entry will be silently ignored.
 
