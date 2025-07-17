@@ -1,291 +1,291 @@
-# ⚙️ Block Settings
+# ⚙️ Block 设置
 
-## hardness
+## 硬度
 
-Determines how long it takes the player to destroy this block (Default: 2.0)
+确定破坏此方块需要多长时间(默认：2.0)
 
 ```yaml
-hardness: 0.5
+难度：0.5
 ```
 
-## resistance
+## 抗性
 
-Determines the probability of the block surviving the explosion (Default: 2.0)
+确定方块在爆炸中生存的概率(默认：2.0)
 
 ```yaml
-resistance: 0.5
+抗性： 0.5
 ```
 
-## is-randomly-ticking
+## 随机刻录
 
-Determines whether the block state accepts random ticks, which is relevant for some block behaviors, such as leaves. (Default: false)
+确定方块状态是否接受随机的条目，这与某些方块行为相关，例如叶子。 (默认：false)
 
 ```yaml
-is-randomly-ticking: true
+随机打勾：true
 ```
 
 ## push-reaction&#x20;
 
-Determines how the block reacts to piston pushes. Please note that some reactions may not work well with certain block types due to client visual sync issues. This problem will be fixed in future versions. (Default: NORMAL)
+确定方块如何对手推送作出反应。 请注意，由于客户端视觉同步问题，某些反应可能与某些块类型不很有效。 这个问题将在今后的版本中解决。 (默认：NORMAL)
 
-- NORMAL   Pistons can push and pull this block normally.
-- DESTROY   Blocks pushed by pistons are destroyed instantly.
-- BLOCK   Pistons cannot move this block.
-- IGNORE  Seems to behave like PUSH\_ONLY but can stick to sticky blocks
-- PUSH\_ONLY   Blocks can be pushed by pistons, but cannot be retracted. Do not stick to sticky blocks.
+- NORMAL 手枪可以正常推送和拉此块。
+- 由手枪推送的破坏力模块立即被摧毁。
+- BloCK 手枪不能移动此块。
+- IGNORE 看起来像PUSH\_only，但可以粘贴到粘贴块
+- PUSH\_仅限屏幕方块可以被手枪推送，但不能被撤销。 不要粘贴到粘性块。
 
 ```yaml
-push-reaction: NORMAL
+推力反应：NORMAL
 ```
 
-## map-color
+## 地图颜色
 
-Determines what color the block is displayed on the map. Available colors can be found on [https://minecraft.wiki/w/Map\_item\_format](https://minecraft.wiki/w/Map_item_format) (Default: 0)
+确定方块在地图上显示的颜色。 可用颜色可以在 [https://minecraft.wiki/w/Map\_item\_格式](https://minecraft.wiki/w/Map_item_format) 上找到(默认: 0)
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/8WeafQSqNMDWGWeLd1NI/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-map-color: 36
+地图颜色： 36
 ```
 
-## burnable
+## 可燃烧的
 
-Determines whether this block can be ignited by the environment (Default: false)
+确定此方块是否可以被环境触发(默认：false)
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/yfgOaG8u4n8BGK600ymB/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-burnable: true
+可烧毁：正确
 ```
 
-## fire-spread-chance
+## 火焰扩散几率：
 
-Determines how long the block can burn. A longer burn time means a greater chance of spreading fire to surrounding blocks. (Default: 0)
+确定方块燃烧的时间。 更长的燃烧时间意味着更容易向周围的方块开火。 (默认：0)
 
 ```yaml
-fire-spread-chance: 100  # 0-100
+火焰扩张机会：100 # 0-100
 ```
 
-## burn-chance
+## 燃烧几率：
 
-Determines the probability of being ignited (Default: 0)
+确定被点燃的概率(默认：0)
 
 ```yaml
-burn-chance: 30  # 0-100
+烧焦几率： 30 # 0-100
 ```
 
-## item
+## 项目
 
-Determines the item that this block corresponds to. This is usually used to get blocks in creative mode with middle click. (Default: null)
+确定此方块对应的项目。 这通常用于在创造性模式中点击获取方块。 (默认：空)
 
 ```yaml
-item: default:xxx_block_item
+项目：默认：xxx_block_item
 ```
 
-## replaceable
+## 可替换
 
-Determines whether to replace the block at its original location when the player uses a block to interact with this block (Default: false)
+当玩家使用一个方块来与该方块交互时，确定是否要在其原始位置替换方块(默认：false)
 
 ```yaml
-replaceable: false
+可替换：false
 ```
 
-## is-redstone-conductor
+## is-redston-conductor
 
-Determines whether this block is a redstone signal conductor (Default: UNDEFINED)
+确定此方块是否是红石信号导体 (默认：开发)
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/eneBtRUIfZA3e7IkDj43/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-is-redstone-conductor: true
+is-redstone-conduct: true
 ```
 
-## is-suffocating
+## 正在窒息中
 
-Determines whether the player will take suffocation damage (Default: UNDEFINED)
+确定玩家是否会承受窒息伤害(默认：开发)
 
 ```yaml
-is-suffocating: true
+正在窒息：true
 ```
 
-## is-view-blocking
+## is-阻止视图
 
-Whether to block the line of sight. However, this option is useless for players, but it will affect some entity mechanisms on the server. (Default: UNDEFINED)
+是否屏蔽视线。 然而，这个选项对玩家毫无用处，但会影响服务器上的一些实体机制。 (默认：开发)
 
 ```yaml
-is-view-blocking: true
+is-view-block: true
 ```
 
-## sounds
+## 声音
 
-Determines the sound of the block in various situations (Default: null)
+在各种情况下确定方块的声音(默认：空)
 
-- fall    When the player falls on this block
-- hit    When the player digs this block
-- break    When the player breaks this block
-- step    When the player walks on this block
-- place    When the player places this block
-- land   When the block falls on ground (For falling blocks)
-- destroy   When the block falls on ground and break (For falling blocks)
+- 当玩家跌落在这个方块上时减少
+- 当玩家挖这个方块时点击
+- 当玩家打破此方块时中断
+- 当玩家在这个方块上行走时步进
+- 当玩家放置此方块时
+- 当区块落在地面时（用于落下区块）
+- 当方块落在地上并被破坏时销毁(以落下方块)
 
 ```yaml
-sounds:
-  break: minecraft:block.deepslate.break
-  step: minecraft:block.deepslate.step
-  place: minecraft:block.deepslate.place
+声音:
+  断点: minecraft:block.deepslate.brek
+  步骤: minecraft:block.deepslate.step
+  位置: minecraft:block.deepslate.place
   hit: minecraft:block.deepslate.hit
   fall: minecraft:block.deepslate.fall
   land: minecraft:block.anvil.land
-  destroy: minecraft:block.anvil.destroy
+  销毁: minecraft:block.anvil.destruction
 ```
 
 {% hint style="info" %}
-You can configure like this to precisely control the volume and pitch
+您可以配置这个配置来精确控制音量和音调
 
 ```yaml
-sounds:
-  break:
-    id: minecraft:block.deepslate.break
+声音:
+  断点:
+    id: minecraft:block.deepslate.brek
     pitch: 0.5
     volume: 0.25
-  step: minecraft:block.deepslate.step
+  步: minecraft:block.deepslate.step
 ```
 
 {% endhint %}
 
-## require-correct-tools
+## 需要正确工具
 
-Determines if correct tool is required for the drops (Default: false)
+确定滴是否需要正确的工具 (默认：false)
 
 ```yaml
-require-correct-tools: false
+需要正确的工具：false
 ```
 
-## respect-tool-component
+## 尊重工具组件
 
-Decides if `minecraft:tool` component's `correct_for_drops` option should work as `correct-tools` below (Default: false)
+决定 `minecraft:tool` 组件的 `correct_for_drops` 选项是否应作为下面的 `correct-tools` (默认：false)
 
 ```yaml
-respect-tool-component: false
+尊重工具组件：false
 ```
 
-## correct-tools
+## 正确工具
 
-Determines the correct tool required to mine this block, otherwise no item will be dropped (Default: null)
+确定输入此方块所需的正确工具，否则将不会丢弃任何项目 (默认：空)
 
 ```yaml
-correct-tools:
-  - minecraft:wooden_pickaxe
-  - minecraft:stone_pickaxe
-  - minecraft:iron_pickaxe
-  - minecraft:golden_pickaxe
-  - minecraft:diamond_pickaxe
-  - minecraft:netherite_pickaxe
+正确的工具：
+  - minecraft:wooden_picaxe
+  - minecraft:stone_picaxe
+  - minecraft:iron_picaxe
+  - minecraft:golden_picaxe
+  - minecraft:diamond_picaxe
+  - minecraft:netherite_picaxe
 ```
 
 {% hint style="success" %}
-If `correct-tools` is set, `require-correct-tools` would be true
+如果设置了 `correct-tools`，`require-correct-tools`将是真的
 {% endhint %}
 
 ## incorrect-tool-dig-speed
 
-Slows down the dig speed if the tool is incorrect (Default: 0.3)
+如果工具不正确，请降低挖掘速度 (默认：0.3)
 
 ```yaml
-incorrect-tool-dig-speed: 0.3 # 0~1
+不正确的工具数字速度：0.3 # 0~1
 ```
 
-## tags
+## 标签
 
-Tags determine the properties of many blocks. For example, using minecraft:mineable/axe will make your blocks mine faster with an axe. [useful-tags](block-settings/useful-tags "mention") (Default: null)
+标签决定了许多方块的属性。 例如，使用 minecraft:mineable/axe 会使你的方块更快地用斧头开采。 [useful-tags](block-settings/useful-tags "提及") (默认: 空)
 
 ```yaml
-tags:
+标签：
   - minecraft:mineable/axe
   - minecraft:logs_that_burn
-  - minecraft:logs
-  - minecraft:completes_find_tree_tutorial
+  - minecraft:log
+  - minecraft:completes_find_tree_tuturing
 ```
 
-## client-bound-tags
+## 客户端边界标签
 
-This would only work for vanilla blocks
+这只适用于原版块
 
 ```yaml
-client-bound-tags:
+客户端边界标签：
   - minecraft:beacon_base_blocks
 ```
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fwnpy7kYwGeRAiJbBTdQ3%2Fimage.png?alt=media&#x26;token=79a6c177-14af-4798-8f49-19c4ca688131" alt=""><figcaption></figcaption></figure>
 
-## instrument
+## 乐器
 
-Determines what instrument the note block will play when it is above this block. (Default: harp)
+确定注释块在该块上方会播放什么工具。 (默认：harp)
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/NhpOFlvMUaWf3xPe3Byo/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-instrument: BASEDRUM
+仪器：BASEDRUM
 ```
 
-## fluid-state&#x20;
+## 流体状态&#x20;
 
-Decides the fluid state of this block state (Default: empty)
+决定此块状态的流体状态(默认：空)
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FNKagcQZqIIVMxX7odHKU%2Fimage.png?alt=media&#x26;token=0f500b1f-bde4-4e28-84de-9ea9a70a7ba4" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-fluid-state: water
+液态：水
 ```
 
-## support-shape
+## 支持形状
 
-Determines the support shape provided by the block. By default, custom blocks will use the **support-shape** of their corresponding visual state. However, you can manually specify the **support-shape** of a vanilla block here instead.
+确定方块提供的支持形状。 默认情况下，自定义块将使用相应的视觉状态的 **support-shape** 。 然而，您可以手动在此指定原版块的 **支持-形状** 。
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fd4ZOrffIv47Tzkw2r2fc%2Fimage.png?alt=media&#x26;token=223541ed-7b5f-451a-b909-038fae926f7e" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-support-shape: minecraft:stone
+支持形状: minecraft:stone
 ```
 
 {% hint style="warning" %}
-The remaining block settings are all related to the light system. CraftEngine has implemented partial light effects as much as possible without affecting server performance. Visual issues with the light system on the client side are normal and in most cases I can't fix them.
+剩余的方块设置都与灯光系统相关。 CraftEngine已尽可能实现部分光效应，但不影响服务器性能。 客户端灯具的视觉问题是正常的，在大多数情况下，我无法修复。
 
-The block's occlusion of **skylight** is entirely determined by the **client-side** and **cannot be fixed** by sending packets from the server. Therefore, the **block-light** and **can-occlude** settings **only affect block-emitted light**, not skylight.
+区块的 **skylight** 完全由 **客户端** 决定，**无法通过从服务器发送数据包来修复** 。 因此，**block-light** 和 **can-occluse** 设置**只影响block-emitted light**, 而不是闪光。
 {% endhint %}
 
-## luminance
+## 亮度
 
-Determines the light intensity of the block (Default: 0)
+确定方块的光强度(默认：0)
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/UCgtZHRVaWqDMLV52UAB/image.png" alt=""><figcaption></figcaption></figure>
 
 ```yaml
-luminance: 15
+亮度：15
 ```
 
-## can-occlude
+## 可闭合
 
-Determines whether this block can block light. This also determines whether the block can turn below block into another type. (For instance grass\_block -> dirt) (Default: undefined)
+确定此方块是否可以屏蔽光线。 这也决定了方块是否可以将下方方块变成另一种类型。 (例如草\_block -> dirt) (默认：未定义)
 
-<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/msw2GomMjl3nfMAjxIGd/image.png" alt=""><figcaption><p>occlude: true</p></figcaption></figure>
+<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/msw2GomMjl3nfMAjxIGd/image.png" alt=""><figcaption><p>八角: true</p></figcaption></figure>
 
-<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/C116bz0ylSfikY93jQYN/image.png" alt=""><figcaption><p>occlude: false</p></figcaption></figure>
+<figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/C116bz0ylSfikY93jQYN/image.png" alt=""><figcaption><p>屏蔽：错误</p></figcaption></figure>
 
-<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fx3zMrfKsVSu4lEhU9Iru%2Fimage.png?alt=media&#x26;token=0c9e7da8-8bf0-42e9-883b-79aad4232a4c" alt=""><figcaption><p>occlude: false</p></figcaption></figure>
+<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fx3zMrfKsVSu4lEhU9Iru%2Fimage.png?alt=media&#x26;token=0c9e7da8-8bf0-42e9-883b-79aad4232a4c" alt=""><figcaption><p>屏蔽：错误</p></figcaption></figure>
 
-<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FIQ62BLMGHWhQYfQbbbyZ%2Fimage.png?alt=media&#x26;token=8a5ff1d2-6d91-44b8-9bb6-ef701d1296e5" alt=""><figcaption><p>occlude: true</p></figcaption></figure>
+<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FIQ62BLMGHWhQYfQbbbyZ%2Fimage.png?alt=media&#x26;token=8a5ff1d2-6d91-44b8-9bb6-ef701d1296e5" alt=""><figcaption><p>八角: true</p></figcaption></figure>
 
 ```yaml
-can-occlude: false
+截图：false
 ```
 
-## block-light
+## 屏蔽光
 
-Determines how much light level is reduced after passing through this block (Default: undefined)
+确定通过此方块后灯级别减小多少(默认：未定义)
 
 ```yaml
-block-light: 0
+Block-light: 0
 ```
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FIARHS7xk9UHdF4ZQ12pC%2Fimage.png?alt=media&#x26;token=199f84cd-ede7-40f3-8cd5-1713f2896886" alt=""><figcaption><p>block-light: 15</p></figcaption></figure>
@@ -294,14 +294,14 @@ block-light: 0
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2F5uiR2P5WZBE6aVvLkiUi%2Fimage.png?alt=media&#x26;token=c35aa388-96de-4354-abf2-a6dd21cc47ef" alt=""><figcaption><p>block-light: 0</p></figcaption></figure>
 
-## propagate-skylight
+## 传播天线
 
 {% hint style="danger" %}
-**This option has almost no effect, as the client will predict sky light updates.**
+**此选项几乎没有效果，因为客户端将预测天空灯的更新。**
 {% endhint %}
 
-Determines whether natural light can pass through this block.
+确定自然光是否可以通过此方块。
 
 ```yaml
-propagate-skylight: true
+宣传天空光: true
 ```
