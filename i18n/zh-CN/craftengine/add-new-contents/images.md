@@ -1,5 +1,5 @@
 ---
-description: This page mainly explains how to add new images to your server.
+description: 此页主要解释了如何向您的服务器添加新图像。
 ---
 
 # 🖼️ Images
@@ -9,48 +9,48 @@ Please read Minecraft Wiki firstly if you don't know how bitmap images work\
 [https://minecraft.wiki/w/Font#Bitmap\_provider](https://minecraft.wiki/w/Font#Bitmap_provider)
 {% endhint %}
 
-## Introduction
+## 一. 导言
 
-At its core, Minecraft's "image display" is essentially a clever character substitution mechanism. The game renders textures by mapping specific Unicode characters to image files through its font system.&#x20;
+在其核心上，Minecraft的“图像展示”基本上是一种聪明的字符替代机制。 游戏通过映射特定的 Unicode 字符到通过其字体系统映射文件来渲染纹理。&#x20;
 
-**Font Ecosystem Essentials**
+**字体生态系统Essentials**
 
-1. **Multiple Font Sets**\
-  Minecraft natively supports various fonts (e.g., `minecraft:default`, `minecraft:uniform`) that can be extended or modified.
-2. **Custom Font Creation**\
-  Users can create personalized fonts by defining:
+1. **多个字体集**\
+  Minecraft本质上支持可以扩展或修改的各种字体(如：`minecraft:default`、`minecraft:unique`)。
+2. **自定义字体创建**
+  用户可以通过定义来创建个性化字体：
 
 ```
 assets/[namespace]/font/[font_name].json
 ```
 
-- `namespace`: Your unique identifier (e.g., `my_namespace`)
-- `font_name`: Custom font designation (e.g., `magic_symbols`)
+- `namespace`：您独特的标识符(例如，`my_namespace`)
+- `font_name`: 自定义字体名称(如：`magic_symbols`)
 
 {% hint style="info" %}
-MiniMessage format: `<font:namespace:font_name>Text</font>`&#x20;
+MiniMessage 格式：\`<font:namespace:font_name>文本</font>&#x20;
 
 MineDown format `[Text](font=namespace:font_name)`
 {% endhint %}
 
-**How It Works**
+**它如何工作**
 
-- When using `\uXXXX` Unicode escape sequences:
-  1. The game checks the font used in the text component
-  2. Maps characters to corresponding textures
-  3. Renders textures at specified character positions
+- 使用 `\uXXXX` Unicode 逃避序列时：
+  1. 游戏检查文本组件中使用的字体
+  2. 映射字符到对应的纹理
+  3. 在指定字符位置呈现纹理
 
 {% hint style="success" %}
-**Question:**
+**问题:**
 
-Will the characters in my country be affected?\
-Can my players illegally use these images through chat, anvils, or other means?
+我的国家中的角色会受到影响吗？\
+我的玩家能否通过聊天室、魔鬼或其他方式非法使用这些图像吗？
 
 **Answer:** \
-Certainly not, unless you use `minecraft:default` (Minecraft's default font). Please avoid using `minecraft:default`, as it is an unsupported behavior.
+Certainly not, unless you use `minecraft:default` (Minecraft's default font). 请避免使用 `minecraft:default`，因为它是不支持的行为。
 {% endhint %}
 
-## Single Character Bitmap
+## 单个字符位图
 
 ```yaml
 images:
@@ -63,32 +63,32 @@ images:
 ```
 
 {% hint style="danger" %}
-The `height` value must always be greater than or equal to the `ascent` value. This is a strict requirement enforced by Minecraft, and you must adhere to this rule.
+"height" 值必须总是大于或等于 "ascent" 值。 这是Minecraft执行的严格要求，你必须遵守这一规则。
 {% endhint %}
 
-## Multiple Characters Bitmap
+## 多个字符位图
 
 ```yaml
-images:
-  default:icons:
-    height: 10
+图像:
+  默认:icons:
+    高度: 10
     ascent: 9
-    font: minecraft:icons
-    file: minecraft:font/image/icons.png
-    chars:
+    字体: minecraft:icons
+    文件: minecraft:font/image/icons。 ng
+    字符:
      - '\ub000\ub001'
-     - '\ub002\ub003'
+     - '\ub002\ub003
 ```
 
 {% hint style="info" %}
-If you'd like to learn how to use PlaceholderAPI to incorporate these images, please refer to the following page: [placeholderapi](../compatibility/placeholderapi "mention").
+如果您想学习如何使用占位符API来包含这些图像，请参阅以下页面： [placeholderapi](../compatibility/placeholderapi "提及")。
 
-If you're interested in learning how to use these images within the CraftEngine plugin, please consult the detailed instructions available at: [text-format](../text-format "mention").
+如果您有兴趣学习如何在 CraftEngine 插件中使用这些图像，请参阅以下网站的详细说明: [text-format](../text-format "提及")。
 {% endhint %}
 
-## Preview the Image In Game
+## 预览游戏中的图像
 
-You can use a very simple command to preview the effect of the image. All you need to do is replace `\ub000` with the character corresponding to your image.
+您可以使用非常简单的命令来预览图像的效果。 你需要做的只是用与你的图像相对应的字符替换`\ub000`。
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/X9GiJ4F4kOgPxWRoKenJ/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -96,15 +96,15 @@ You can use a very simple command to preview the effect of the image. All you ne
 /tellraw @p {"text":"\ub000","font":"minecraft:icons"}
 ```
 
-## Compatibility with Other Plugins
+## 与其他插件兼容性
 
-There are two ways to use images in other plugins:
+在其他插件中有两种方式可以使用图像：
 
-1. Use a plugin that supports **MiniMessage/MineDown** and **PlaceholderAPI**. In this case, you just need to use the corresponding placeholder. Please refer to this article to see how to use placeholder. [placeholderapi](../compatibility/placeholderapi "mention")
-2. Use a tag in the format of `<image:namespace:id>` `<image:namespace:id:row:column>` `<shift:-20>` just like what we do in [text-format](../text-format "mention"). CraftEngine will replace these tags with characters of the corresponding font at the **packet level**.
+1. 使用一个支持 **MiniMessage/MineDown** 和 **PlaceholderAPI** 的插件。 在此情况下，您只需要使用相应的占位符。 请参阅本条以查看如何使用占位符。 [placeholderapi](../compatibility/placeholderapi "提及")
+2. 使用一个标签，格式为`<image:namespace:id>`<image:namespace:id:row:column>`<shift:-20>`，就像我们在 [text-format]中所做的一样。(../text-format "mention")。 CraftEngine 将在**数据包级别**用相应字体的字符替换这些标签。
 
 {% hint style="info" %}
-You can find the following configuration in config.yml, which controls the scope in which these tags are effective.
+您可以在 config.yml 中找到以下配置，它控制这些标签的有效范围。
 
 ```yaml
 image:
