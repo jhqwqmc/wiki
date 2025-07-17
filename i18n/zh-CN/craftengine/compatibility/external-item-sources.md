@@ -1,6 +1,6 @@
-# 🐌 External Item Sources
+# 🐌 外部项目来源
 
 - NeigeItems
-- MMOItems
-- MythicMobs
-- CustomFishing
+- MMOitems
+- 神秘的
+- 自定义渔业
