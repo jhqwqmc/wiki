@@ -1,35 +1,35 @@
-# 🟢 Argument Types
+# 🟢 参数类型
 
-## Direct Assignment
+## 直接作业
 
-The simplest type of parameter is direct assignment, where you directly write the value after the parameter name.
+最简单的参数类型是直接作业，你直接在参数名称后写入值。
 
 ```yaml
-arguments:
+参数:
   value_1: true
   value_2: 100
 
-# Use a map
-arguments:
+# 使用地图
+参数:
   value_map:
     a: b
     c: d
 
-# Use a list
-arguments:
+# 使用列表
+参数:
   value_list:
     - 123
     - 456
 ```
 
 {% hint style="danger" %}
-When directly assigning a map, the parameters of the map must not include `type`, otherwise an error will occur! In such cases, you should use the Map type as described below.\
-❌️
+当直接分配地图时，地图参数不能包含 `type`，否则将发生错误！ 在这种情况下，你应该使用下面描述的地图类型。\
+:cross_mark：
 
 ```yaml
-arguments:
+参数:
   value_map:
-    type: c
+    type : c
     a: b
     c: d
 ```
@@ -37,11 +37,11 @@ arguments:
 ✔️
 
 ```yaml
-arguments:
+参数:
   value_map:
-    type: map
+    type : map
     map:
-      type: c
+      type : c
       a: b
       c: d
 ```
@@ -49,14 +49,14 @@ arguments:
 {% endhint %}
 
 {% hint style="info" %}
-All non-direct assignment parameter types require specifying the parameter type `type`. Below are some available parameter types and examples
+所有非直接作业参数类型都需要指定参数类型“type”。 以下是一些可用的参数类型和实例
 {% endhint %}
 
-## Self Increase Int
+## 自我提升Int
 
-`self_increase_int` is an auto-incrementing numeric ID that increases by 1 each time the parameter is used.
+`self_incree_int` 是一个自动递增的数字ID，每次使用参数时增加1个。
 
-> Config
+> 配置
 
 <pre class="language-yaml"><code class="lang-yaml"># Part of template
 variants:
@@ -78,22 +78,22 @@ arguments:
     to: 2
 </code></pre>
 
-> Result
+> 结果
 
 ```yaml
-variants:
-  axis=x:
-    appearance: axisX
-    id: 0
-  axis=y:
-    appearance: axisY
-    id: 1
-  axis=z:
-    appearance: axisZ
-    id: 2
+变量：
+  坐标轴=x：
+    外观：轴X
+    id：0
+  坐标轴=y：
+    外观：轴
+    id：1
+  坐标：
+    外观：
+    id：2
 ```
 
-## Expression
+## 表达式
 
 ```yaml
 arguments:
@@ -103,20 +103,20 @@ arguments:
     value-type: double # int/double/float/short/long/boolean
 ```
 
-## Map
+## 地图
 
-Replace the placeholder with the specified map.
+用指定的地图替换占位符。
 
 ```yaml
-arguments:
-  enchantments:
-    type: map
-    map:
+参数:
+  附魔:
+    类型: 地图
+    地图:
       minecraft:sharpness: 1
 ```
 
 {% hint style="warning" %}
-In this case, the map cannot be applied correctly
+在这种情况下，地图无法正确应用
 
 ❌️
 
@@ -134,9 +134,9 @@ template:
 
 {% endhint %}
 
-## List
+## 列表
 
-Replace the placeholder with the specified list.
+用指定的列表替换占位符。
 
 ```yaml
 arguments:
@@ -147,7 +147,7 @@ arguments:
 ```
 
 {% hint style="warning" %}
-In this case, the list cannot be applied correctly
+在这种情况下，列表无法正确应用
 
 ❌️
 
