@@ -1,24 +1,24 @@
-# 📓 Config Format Changelog
+# 📓 配置格式变更日志
 
 ## 0.0.18
 
-Moved `tags`to `settings`
+移动`tags`到`settings`
 
-#### before
+#### 前
 
 ```yaml
-default:palm_planks:
+默认:palm_plaks:
   material: paper
-  custom-model-data: 1004
+  custom-model-date: 1004
   tags:
     - "minecraft:planks"
     - "minecraft:wooden_tool_materials"
 ```
 
-#### after
+#### 之后
 
 ```yaml
-default:palm_planks:
+默认：palm_plaks:
   material: paper
   custom-model-data: 1004
   settings:
@@ -29,52 +29,52 @@ default:palm_planks:
 
 ## 0.0.35
 
-Renamed stonecutting recipe type
+重命名石头配方类型
 
-#### before
+#### 前
 
 ```yaml
-type: stone_cutting
+类型：石头切割。
 ```
 
-#### after
+#### 之后
 
 ```yaml
-type: stonecutting
+类型：石头
 ```
 
 ## 0.0.48
 
-Moved `offset-characters` to `image.offset-characters` in config.yml
+在 config.yml 中将 `offset-characters` 移动到 `image.offset-characters`
 
 ## 0.0.49
 
-Changed how invalid furniture works in config.yml
+更改 config.yml 中无效的家具工作方式
 
 ```yaml
-furniture:
-  remove-invalid-furniture-on-chunk-load:
-    enable: false
-    list:
-    - "xxx:invalid_furniture"
+家具：
+  移除无效的家具-待机负载：
+    已启用：false
+    list：
+    - "xxx:invalid_gakure"
 ```
 
 ->
 
 ```yaml
-furniture:
-  handle-invalid-furniture-on-chunk-load:
-    enable: true
-    remove:
+家具:
+  个手势无效的家具-待机-负载:
+    启用: true
+    移除:
       - "default:table_lamp"
-    convert:
-      "default:wooden_chair": "default:bench"
+    转换:
+      "default:wooden_chair": "defaultbett:"
 ```
 
-Refactored how host works in config.yml. Read this page for the new format:
+恢复主机如何在 config.yml 中工作。 读取此页面的新格式：
 
 {% content-ref url="../resource-pack/host" %}
-[host](../resource-pack/host)
+[host](../resources pack/host)
 {% endcontent-ref %}
 
 ## 0.0.57
