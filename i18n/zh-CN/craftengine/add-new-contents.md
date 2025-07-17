@@ -1,12 +1,12 @@
 ---
-description: This page mainly explains how to manage custom contents
+description: 本页主要说明如何管理自定义内容
 ---
 
-# ➕️ Add New Contents
+# ➕️ 添加新内容
 
-## Resources&#x20;
+## 资源&#x20;
 
-In the root directory of the plugin (`plugins/CraftEngine/resources/`), all packages are stored, and the names of these packages are arbitrary. Each package consists of two folders and one YAML file. The folders contain configurations and resource packs respectively, while the YAML file holds the metadata for the package.
+在插件根目录（`plugins/CraftEngine/resources/`）中存放着所有内容包，这些包的名称可自由定义。 每个内容包由两个文件夹和一个YAML文件构成。 文件夹分别存储配置和资源包，YAML文件则保存该内容包的元数据。
 
 ```
 plugins
@@ -22,20 +22,20 @@ plugins
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/k0BUh80VNuR2bSJvfjhO/image.png" alt=""><figcaption></figcaption></figure>
 
-## Pack Meta File
+## 包元文件
 
-The Meta File is a YAML document that records some fundamental information. Among its entries, the most significant is the `namespace`.
+元文件是一个记录基础信息的YAML文档。 其中最重要的条目是 `namespace`。
 
 ```yaml
 author: XiaoMoMi
 version: 0.0.1
-description: Default Assets for CraftEngine
+description: CraftEngine默认资源
 namespace: default
-enable: true # set `false` to disable this pack 
+enable: true # 设置为 `false` 可禁用此包 
 ```
 
 {% hint style="info" %}
-The effect of a namespace is confined to the second-level nodes under the root node in the YAML hierarchy, exemplified here by "default:palm\_leaves " and "palm\_leaves". Provided that a namespace is specified in `pack.yml`, if a namespace is not explicitly designated, the package namespace will be used by default.
+命名空间的作用范围仅限于YAML层级结构中根节点下的二级节点，如示例中的"default:palm\_leaves"与"palm\_leaves"。 若在`pack.yml`中指定了命名空间，当未显式声明命名空间时，将默认使用包命名空间。
 
 ```yaml
 blocks:
@@ -44,7 +44,7 @@ blocks:
       type: leaves_block
 ```
 
-is equivalent to
+等价于
 
 ```yaml
 blocks:
@@ -55,7 +55,7 @@ blocks:
 
 {% endhint %}
 
-## Configuration
+## 配置
 
 ```
 plugins
@@ -65,7 +65,7 @@ plugins
             └ configuration
 ```
 
-The configuration files are stored in the following folder. The configuration file format supports both json and yml. Moreover, you can create as many subdirectories as you like under the configuration.
+配置文件存储于以下目录中，支持json和yml两种格式。 您可以在配置目录下自由创建任意数量的子目录。 Moreover, you can create as many subdirectories as you like under the configuration.
 
 {% hint style="success" %}
 In YAML configuration, the following format is not allowed:
