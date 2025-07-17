@@ -1,14 +1,14 @@
-# 🏷️ Properties
+# 🏷️ 属性
 
 {% hint style="warning" %}
-Please note that, regardless of the type of property, you must configure a default value within a reasonable range for each one.
+请注意，无论属性类型如何，您都必须在一个合理范围内配置每个属性的默认值。
 {% endhint %}
 
-## Custom Property
+## 自定义属性
 
 ### boolean
 
-A property of type `boolean` can only have two possible values: `true` or `false`.
+类型为 `boolean` 的属性只能有两个可能的值：`true` 或 `false` 。
 
 ```yaml
 properties:
@@ -17,69 +17,69 @@ properties:
     default: false
 ```
 
-### int
+### 整数
 
-A property of type `int` can take any integer value within the specified range.
+类型`int`的属性可以在指定范围内采集任何整数。
 
 ```yaml
-properties:
-  mode:
-    type: int
-    default: 1
-    range: 1~3
+属性:
+  模式:
+    类型: int
+    默认值: 1
+    范围: 1~3
 ```
 
-### string
+### 字符串
 
-A property of type `string` can only take values from a predefined set of options.
+类型为 `string` 的属性只能从预定义的选项集中获取值。
 
 ```yaml
-properties:
-  color:
-    type: string
-    default: red
-    values:
+属性:
+  颜色:
+    类型: 字符串
+    默认值: 红色
+    值:
       - read
-      - green
-      - blue
+      - 绿色
+      - 蓝色
 ```
 
-## Hard-coded Property
+## 硬编码属性
 
 {% hint style="danger" %}
-Please note that the property name must be the same as the examples to take effect
+请注意属性名称必须与要生效的
 {% endhint %}
 
-### facing
+### 正面
 
-The facing values ​​are `east, south, west, north, up, down`. When a block has this hardcoded property, its placement orientation will automatically adapt.
+面对的价值观是“东面、南部、西部、北部、下面”。 当一个方块具有这个硬编码属性时，其位置方向将自动调整。
 
 ```yaml
-properties:
-  facing:
-    # horizontal_direction = 4 faces
-    # direction = 6 faces
-    type: direction
-    default: north
+属性：
+  正面：
+    # 水平方向 = 4 个面
+    # 方向 = 6 个面
+    类型： 方向
+    默认：
 ```
 
-### facing\_clockwise
+### 正在呈现\_顺时针
 
-Unlike the above, it will be rotated 90 degrees when placed
+与以上不同，放置时将旋转90度
 
 ```yaml
-properties:
+属性:
   facing_clockwise:
-    type: horizontal_direction
-    default: north
+    类型: 水平方向
+    默认值:
 ```
 
-### waterlogged
+### 蓄水量
 
 waterlogged determines whether this block can contain water.&#x20;
 
 {% hint style="warning" %}
-Please note: When using this state, you must ensure that the corresponding visual block also contains water, otherwise the client cannot render the water.
+请注意：当使用此状态时 您必须确保相应的视觉模块也包含水，否则客户端不能提供水。
 {% endhint %}
 
 ```yaml
@@ -89,44 +89,44 @@ properties:
     default: false
 ```
 
-### axis
+### 轴
 
-Axis determines whether the blocks are placed along the axis, such as pillar and log. The axis can only be `x, y, z`
+轴决定方块是否放置在轴上，如界面和日志。 轴只能是 `x, y, z`
 
 ```yaml
-properties:
-  axis:
-    type: axis
-    default: y
+属性:
+  轴:
+    类型: 轴
+    默认值: y
 ```
 
-### single\_block\_half  / double\_block\_half
+### sinle\_block\_hal/double\_block\_halt
 
 ```yaml
-properties:
-  half:
-    # single_block_half  (for slabs, trapdoors) [top, bottom]
-    # double_block_half  (for doors, double height plants) [upper, lower]
-    type: single_block_half
-    default: bottom
+属性:
+  一半:
+    # sinle_block_half (用于板块, 陷阱) [顶部, 底部]
+    # 加倍block_half (门, 双身身高植物（顶，低]
+    类型：sinle_block_half
+    默认值：底部
 ```
 
 ### hinge
 
-The hinge can only be `left, right`
+hinge 只能是 `left, right`
 
 ```yaml
-properties:
+属性:
   hinge:
-    type: hinge
+    类型: hinge
 ```
 
-### slab\_type
+### 板块\_类型
 
-The slab\_type can only be `top, bottom, double`
+Slab\_type 只能是 `top, bow, double `
 
 ```yaml
-properties:
-  type:
-    type: slab_type
+属性:
+  类型:
+    类型: slab_type
 ```
