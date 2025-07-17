@@ -1,93 +1,91 @@
 ---
-description: This page mainly explains how to add new furniture to your server.
+description: 此页主要解释了如何向您的服务器添加新家具。
 ---
 
-# 🪑 Furniture
+# :Chair: Furniture
 
 {% hint style="danger" %}
-Please note that reloading the plugin will not affect furniture that already placed! You will need to restart the server or reload the chunks to apply new configurations to existing furniture. The plugin utilizes caching to enhance the performance of the furniture. Forcibly reloading furniture that is already loaded on the server without caution could have a significant impact on the server's stability.\
-\
-In the future, the plugin may consider introducing related unsafe flags for forced reloading, but certainly not at this moment.
+请注意，重新加载插件将不会影响已经放置的家具！ 您将需要重新启动服务器或重新装入区块以将新配置应用于现有家具。 插件使用缓存来提高家具的性能。 强制重新加载已经装入服务器的家具，可能会对服务器的稳定性产生重大影响。今后，插件可能会考虑引入相关的不安全标志来进行强制重新加载，但此刻肯定不存在。
 {% endhint %}
 
-## Sections to Configure
+## 要配置的小组
 
-A complete furniture configuration contains the following sections:
+完整的家具配置包含以下部分：
 
-- behavior
+- 行为
 
 {% content-ref url="furniture/furniture-behaviors" %}
-[furniture-behaviors](furniture/furniture-behaviors)
+[furniture-behaviors](家具/家具-行为)
 {% endcontent-ref %}
 
-- settings
+- 设置
 
 {% content-ref url="furniture/furniture-settings" %}
-[furniture-settings](furniture/furniture-settings)
+[furniture-settings](家具/家具-设置)
 {% endcontent-ref %}
 
-- placement
+- 位置
 
 {% content-ref url="furniture/furniture-placement" %}
-[furniture-placement](furniture/furniture-placement)
+[furniture-placement](家具/家具放置)
 {% endcontent-ref %}
 
 - loot
 
 {% content-ref url="../loot-table" %}
-[loot-table](../loot-table)
+[loot-table](../lot-table)
 {% endcontent-ref %}
 
-- events
+- 事件
 
 {% content-ref url="../events" %}
 [events](../events)
 {% endcontent-ref %}
 
-## How to Bind Items
+## 如何绑定项目
 
 {% content-ref url="../items/item-behaviors/furniture-item" %}
-[furniture-item](../items/item-behaviors/furniture-item)
+[furniture-item](../items/item-behaviors/gabour-item)
 {% endcontent-ref %}
 
-## Full Config Overview
+## 完整配置概述
 
 ```yaml
-furniture:
-  default:bench:
-    settings:
-      item: default:bench
-      sounds:
-        break: minecraft:block.bamboo_wood.break
-        place: minecraft:block.bamboo_wood.place
-    placement:
-      ground:
-        rules:
+家具：
+  默认：
+    设置：
+      项：默认：bench
+      声音：
+        断路：minecraft：block。 ambo_wood.bret
+        位置：minecraft:block.bambo_wood。 lace
+    place :
+      :
+        rules :
           # ANY / FOUR / EIGHT / SIXTEEN / NORTH / EAST / WEST / SOUTH
-          rotation: EIGHT
+          rotation: EIGHTT
           # ANY / CENTER / HALF / QUARTER / CORNER
           alignment: CENTER
-        elements:
+        element:
           - item: default:bench
-            display-transform: NONE
-            billboard: FIXED
-            position: 0.5,0,0
-            translation: 0,0.5,0
-        hitboxes:
-          - position: 0,0,0
-            width: 1
-            height: 1
-            interactive: true
-            seats:
-              - 0,0,-0.1 0
-          - position: 1,0,0
-            width: 1
-            height: 1
-            interactive: true
-            seats:
-              - 1,0,-0.1 0
-    loot:
-      template: loot_table:normal
-      arguments:
+            display-transform: NOE
+            lable: FIXed
+            position: 0. 0,0
+            翻译：0,0 ,0
+        点击箱：
+          - 位置：0,0
+            宽度：1
+            高度：1
+            交互式：真正
+            座位：
+              - 0 ,-0。 0
+          - 位置： 1,0,
+            宽度：1
+            高度：1
+            交互式：真正
+            座位：
+              - 1, ,-0。 0
+    观看:
+      模板: lot_table:normal
+      参数:
         item: default:bench
 ```

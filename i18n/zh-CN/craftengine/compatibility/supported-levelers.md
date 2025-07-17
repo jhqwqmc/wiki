@@ -1,9 +1,9 @@
-# 👔 Supported Levelers
+# 👔 支持的等级
 
-- AuraSkills
+- 奥拉技能
 - AureliumSkills
 - EcoJobs
-- EcoSkills
+- 生态技能
 - JobsReborn
 - mcMMO
 - MMOCore

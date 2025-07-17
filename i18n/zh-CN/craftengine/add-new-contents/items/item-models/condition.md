@@ -1,11 +1,11 @@
 ---
-description: https://minecraft.wiki/w/Items_model_definition#condition
+description: https://minecraft.wiki/w/Items_model_definition#condition。
 ---
 
-# ⚖️ Condition
+# :balanc_scale : 条件
 
 {% hint style="info" %}
-In this configuration, when you use "minecraft:condition," you need to specify the condition type, which is the "property" mentioned below. "on-false" and "on-true" respectively represent displaying different models under different conditions.
+在这个配置中，当您使用"minecraft:condition"时，您需要指定条件类型，它是下面提到的“属性”。 “false”和“true”分别表示在不同条件下显示不同的模型。
 {% endhint %}
 
 ```yaml
@@ -22,79 +22,79 @@ items:
         path: "minecraft:item/custom/model_true"
 ```
 
-## Available Properties
+## 可用属性
 
-check [https://minecraft.wiki/w/Items\_model\_definition#condition](https://minecraft.wiki/w/Items_model_definition#condition) for the usage of each argument
+检查[https://minecraft.wiki/w/Items\_model\_definition#condition](https://minecraft.wiki/w/Items_model_definition#condition)对每个参数的使用
 
-### minecraft:broken
+### 矿工:损坏
 
-> Return `true` if the item is damageable and has only one use remaining before breaking.
+> 返回`true`，如果该物品是可损坏的并且在中断前只剩下一个用途。
 
-### minecraft:carried
+### 矿工:carried
 
-> Return `true` if item is carried between slots in GUI.
+> 返回`true`，如果项目在图形界面的位置之间传输。
 
-### minecraft:**damaged**
+### minecraft：**损坏**
 
-> Return `true` if the item is damageable and has been used at least once.
+> 返回`true`，如果项目是可损坏的并且至少已经被使用过一次。
 
 ### minecraft:**extended\_view**
 
-> Return `true` if player has requested extended details by holding shift key down. Only works when item is displayed in UI. Note: not a keybind, can't be rebound.
+> 如果玩家按住 shift 键要求扩展详情，返回 `true`。 只有当项目在界面中显示时才能正常工作。 注意：不是按键绑定，不能退回。
 
 ### minecraft:**fishing\_rod/cast**
 
-> Return `true` if there is a fishing bobber attached to currently used fishing rod.
+> 如果目前使用过的钓鱼棒附着，则返回 `true`。
 
-### minecraft:**selected**
+### Minecraft：**选择**
 
-> Return `true` if item is selected on a hotbar.
+> 如果项目在热键上被选中，返回 `true` 。
 
-### minecraft:**using\_item**
+### Minecraft：**使用\_item**
 
-> Return `true` if player is currently using this item.
+> 如果玩家正在使用此项目，返回 `true` 。
 
-### minecraft:**view\_entity**
+### minecraft：**view\_entity**
 
-> - When not spectating, return `true` if context entity is the local player entity, i.e. the one controlled by client.
-> - When spectating, return `true` if context entity is the _spectated_ entity.
-> - If context entity is not present, will return `false`.
+> - 当不投机时，如果上下文实体是本地玩家实体，即客户端控制的实体则返回 `true`。
+> - 当投机时，如果上下文实体是 _specated_ 实体则返回 `true`。
+> - 如果上下文实体不存在，将返回 \`false'。
 
 ### minecraft:**bundle/has\_selected\_item**
 
-> Return `true` if bundle is "open", i.e. it has selected item visible in GUI.
+> 返回 `true` ，如果bundle 是"open"，也就是它选择了可见于GUI中的项目。
 
-### minecraft:**component (1.21.5+)**
+### minecraft:**组件 (1.21.5+)**
 
-> Uses component [item sub predicates](https://minecraft.wiki/w/Item_sub-predicate) to match item components.
+> 使用组件[预测子项目](https://minecraft.wiki/w/Item_sub-predicate) 匹配项目组件。
 
-### minecraft:has\_**component**
+### minecraft:has\_**组件**
 
-> Return `true` if the given component is present on the item.
+> 如果给定的组件存在于项目上，返回 `true` 。
 
 ```yaml
-type: "minecraft:condition"
-property: "minecraft:has_component"
-component: minecraft:enchantments
-ignore-default: false
+输入: "minecraft:condition"
+属性: "minecraft:has_component"
+组件: minecraft:enchantes
+忽略默认值: false
 ```
 
-### minecraft:**keybind\_down**
+### minecraft：**keybind\_down**
 
-> Return `true` if keybind is currently active.
+> 如果密钥绑定当前激活，返回 `true` 。
 
 ```yaml
-type: "minecraft:condition"
-property: "minecraft:keybind_down"
-keybind: key.left
+类型：“minecraft:condition”
+属性 "minecraft:keybind_down"
+keybind: key.let
 ```
 
 ### minecraft:**custom\_model\_data**
 
-> Return value from `flags` list in `minecraft:custom_model_data` component.
+> 从 `minecraft:custom_model_data` 组件中的 `flags` 列表返回值。
 
 ```yaml
-type: "minecraft:condition"
-property: "minecraft:custom_model_data"
-index: 0
+类型：“minecraft:condition”
+属性：“minecraft:custom_model_data”
+索引: 0
 ```

@@ -1,14 +1,14 @@
-# ❓️ Common Questions
+# ❓ 常见问题
 
-### Block Models Are Darker Than What it Looks Like in BlockBench
+### 方块模型是否是黑暗样式在方块板上看起来像样的
 
-<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2F5CFzp3BmgIMfrCIQ3HYz%2Fimage.png?alt=media&#x26;token=9796712d-7e36-4beb-8ae9-e412699b7454" alt=""><figcaption><p>Press F4 and turn shade off</p></figcaption></figure>
+<figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2F5CFzp3BmgIMfrCIQ3HYz%2Fimage.png?alt=media&#x26;token=9796712d-7e36-4beb-8ae9-e412699b7454" alt=""><figcaption><p>按 F4 关闭</p></figcaption></figure>
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FOn2OsWlo6pIhYBfyxYX8%2Fimage.png?alt=media&#x26;token=d1e68a48-446d-42df-9078-dce2c1935bfb" alt=""><figcaption></figcaption></figure>
 
-## Tint Index
+## 提示索引
 
-For firework stars, tint index should be 1 for 1.20-1.21.3
+烟花明星的指数应为1.20-1.21.3 。
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fz6HRXwDcxlqPHtVnXdfk%2Fimage.png?alt=media&#x26;token=e694f8f3-6e8d-495c-b455-cd5872c04dd8" alt=""><figcaption></figcaption></figure>
 

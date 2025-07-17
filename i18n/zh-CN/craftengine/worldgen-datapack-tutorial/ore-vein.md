@@ -1,10 +1,10 @@
-# 🪨 Ore Vein
+# 🪨 矿石
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/zpzxKSGLzNTYyM86Bmqe/image.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/YdA2B6pzJDhJLeW5ur7i/image.png" alt=""><figcaption></figcaption></figure>
 
-## Configured Feature
+## 配置的功能
 
 ```json
 {
@@ -36,7 +36,7 @@
 }
 ```
 
-## Placed Feature
+## 已放置的功能
 
 ```json
 {
@@ -72,4 +72,4 @@
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/wMJjO7A0rsjY8rG0rxEm/image.png" alt=""><figcaption></figcaption></figure>
 
-{% file src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/AUuQxbedEBV6DugvykFm/topaz_ore.zip" %}
+{% file src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/AuuQxbedEBV6DugvykFm/topaz_ore.zip" %}

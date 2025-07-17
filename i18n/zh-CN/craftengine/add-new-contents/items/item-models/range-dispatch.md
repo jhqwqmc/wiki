@@ -1,13 +1,13 @@
 ---
-description: https://minecraft.wiki/w/Items_model_definition#range_dispatch
+description: https://minecraft.wiki/w/Items_model_definition#range_paid
 ---
 
-# 📡 Range Dispatch
+# :satellite_atirna: 射程分配
 
-> Render an item model based on numeric property. Will select last entry with threshold less or equal to property value.
+> 基于数字属性渲染项目模型。 将选择临界值小于或等于属性值的最后条目。
 
 {% hint style="info" %}
-When using "minecraft:range\_dispatch," you need to specify the numeric `property` type. `scale` represents the factor to multiply the property value with, `entries` represent the models under different numerical values, and `fallback` represents the item model object if no valid entry was found. It is optional, but if not specified, it will render a "missing" error model.
+当使用 "minecraft:range\_调度"时，您需要指定数字`property`类型。 `scale` 代表着将属性值与`输入`表示不同数值下的模型的因素。 和 `fallback` 表示项目模型对象，如果没有找到有效的条目。 它是可选的，但如果未指定，它将会呈现一个“丢失”错误模型。
 {% endhint %}
 
 ```yaml
@@ -30,90 +30,90 @@ items:
         path: "minecraft:item/custom/model_3"
 ```
 
-## Available Properties
+## 可用属性
 
-check [https://minecraft.wiki/w/Items\_model\_definition#range\_dispatch](https://minecraft.wiki/w/Items_model_definition#range_dispatch) for the usage of each argument
+检查[https://minecraft.wiki/w/Items\_model\_definition#range\_调度](https://minecraft.wiki/w/Items_model_definition#range_dispatch)对每个参数的使用
 
-### minecraft:**crossbow/pull**
+### Minecraft：**crossbow/pull**
 
-> Return crossbow-specific use time.
+> 返回跨弓特定使用时间。
 
-### minecraft:**bundle/fullness**
+### minecraft:**bundle/fulness**
 
-> Return weight of `minecraft:bundle_contents` component or `0` if not present.
+> 如果不存在，返回 `minecraft:bundle_contents` 组件或 `0` 的重量。
 
-### minecraft:**cooldown**
+### Minecraft：**冷却**
 
-> Return remaining cooldown for item, scaled between `0.0` to `1.0`.
+> 返回物品的剩余冷却状态，缩放在 `0.0` 到 `1.0` 之间。
 
-### minecraft:**compass**
+### minecraft：**compass**
 
-> Return an angle, scaled from `0.0` to `1.0` in x-z plane between holder position and target. If target is not valid (not present, in other dimension or too close to holder position) random value will be returned.
+> 以x-z平面返回持有者位置和目标之间的 `0.0` 缩放到`1.0` 的角度。 如果目标无效(不存在，其他尺寸或太接近持有者位置)，将会返回随机值。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:compass"
-target: spawn
-wobble: true
+类型：“minecraft:range_paych”
+属性：“minecraft:compass”
+目标：生成
+wob: true
 ```
 
-### minecraft:**count**
+### Minecraft：**计数**
 
-> Return stack size.
+> 返回堆栈大小。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:count"
+类型：“minecraft:range_paych”
+属性：“minecraft:count”
 normalize: true
 ```
 
-### minecraft:**damage**
+### minecraft：**damage**
 
-> Return value for `minecraft:damage` component or `0` if not present.
+> 如果不存在，返回 `minecraft:damage` 组件或 `0` 的值。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:damage"
+类型：“minecraft:range_paych”
+属性：“minecraft:damage”
 normalize: true
 ```
 
-### minecraft:**time**
+### Minecraft：**时间**
 
-> Return value of a in-game time, scaled betewen `0.0` to `1.0`.
+> 返回游戏中时间的值, 缩放的 Betewen `0.0` 到 \`1.0'。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:time"
-source: daytime
-wobble: true
+类型：“minecraft:range_appailch”
+属性：“minecraft:time”
+来源：daytime
+wob: true
 ```
 
-### minecraft:**use\_cycle**
+### minecraft:**使用\_cycle**
 
-> Return remaining use ticks modulo `period`.
+> 返回剩余的使用条目模块“周期”。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:use_cycle"
-period: 1.0
+类型：“minecraft:range_appoch”
+属性 "minecraft:use_cycle"
+周期： 1.0
 ```
 
-### minecraft:**use\_duration**
+### minecraft:**使用\_duration**
 
-> Return item use ticks.
+> 返回条目使用条目。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:use_duration"
-remaining: false
+类型：“minecraft:range_appoch”
+属性：“minecraft:use_duration”
+剩余：false
 ```
 
 ### minecraft:**custom\_model\_data**
 
-> Return value from `floats` list in `minecraft:custom_model_data` component or `0` if not present.
+> 从 `minecraft:custom_model_data` 组件中的 `floats` 列表返回值，如果不存在，则返回 `0` 。
 
 ```yaml
-type: "minecraft:range_dispatch"
-property: "minecraft:custom_model_data"
-index: 0
+类型：“minecraft:range_appoch”
+属性：“minecraft:custom_model_data”
+索引: 0
 ```

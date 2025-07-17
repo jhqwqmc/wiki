@@ -65,10 +65,10 @@ plugins
             └ configuration
 ```
 
-配置文件存储于以下目录中，支持json和yml两种格式。 您可以在配置目录下自由创建任意数量的子目录。 Moreover, you can create as many subdirectories as you like under the configuration.
+配置文件存储于以下目录中，支持json和yml两种格式。 您可以在配置目录下自由创建任意数量的子目录。 此外，您可以在配置下创建尽可能多的子目录。
 
 {% hint style="success" %}
-In YAML configuration, the following format is not allowed:
+在 YAML 配置中，不允许以下格式：
 
 ```yaml
 items:
@@ -85,20 +85,20 @@ items:
       slot: feet
 ```
 
-Therefore, you need to add `# + any identifier` after the configuration section name, which allows you to configure multiple sections of the same type within a single YAML file.
+因此，您需要在配置部分名称后添加 `# + 任何标识符` 。 允许您在单个的 YAML 文件中配置同类型的多个部分。
 
 ```yaml
 items#0:
   default:topaz_helmet:
     template: default:topaz_armor
-    arguments:
-      part: helmet
+    参数:
+      part : helmet
       slot: head
 items#1:
   default:topaz_boots:
     template: default:topaz_armor
-    arguments:
-      part: boots
+    参数:
+      part : boots
       slot: feet
 ```
 
@@ -108,23 +108,23 @@ items#1:
 
 ```
 plugins
-  └ CraftEngine
-     └ resources
-         └ pack
-            └ resourcepack
-               ├ assets
-               ├ overlay_folder
-               ├ pack.mcmeta
-               └ pack.png
+  craftEngine
+     de resources
+         capk
+            cetcepack
+               sedresources
+               collay_floor
+               tanticpack.mcta
+               pack.png
 ```
 
-Please ensure that the directory structure of your resource pack is as shown in the figure below, otherwise, it may lead to some merging issues. The overlay\_folder, pack.mcmeta, and pack.png files are not mandatory.
+请确保您资源包的目录结构如以下图所示，否则可能导致一些合并问题。 叠加层\_folder, pack.mcmeta, 和 pack.png 文件不是强制性的。
 
-## Version-Based Configs
+## 基于版本的配置
 
-CraftEngine lets you add version-based configs for different server versions. Just use keys formatted like `$$version` in your YAML file.
+CraftEngine 允许您为不同的服务器版本添加基于版本的配置。 Just use keys formatted like `$$version` in your YAML file.
 
-#### **Example 1: Value Selection**
+#### **示例1：值选择**
 
 ```yaml
 # my_config.yml  
@@ -141,31 +141,31 @@ settings:
     $$fallback: ["default"]  # Fallback if no version matches  
 ```
 
-#### **Example 2: Block Merging**
+#### **示例2：块合并**
 
 ```yaml
-# other_config.yml  
+# 其他配置 ml  
 server_properties:  
-  motd: "A generic server"  
+  motd: "一个通用服务器"  
   online_mode: true  
-  # This is a normal map, but contains a versioned block  
-  # It's not a value selector because it has regular keys (motd, online_mode)  
-  $$1.21.4:  
-    # This block gets merged into server_properties  
-    motd: "A 1.21.4 Server!"  # Overrides the generic motd  
-    new_feature_enabled: true  # Adds a new key  
+  # 这是一个正常的地图 但包含一个版本块  
+  # 它不是一个值选择器，因为它有常规键(模组， online_mode  
+  $1。 1.4:  
+    # 此块被合并到 server_properties  
+    motd: "A 1.21。 服务器！" # 覆盖通用模组  
+    new_feature_enabled：true # 添加一个新密钥  
 ```
 
 ## Debug
 
-Enable debug mode for this configuration by adding a `debug` option
+添加一个 `debug` 选项以启用此配置的调试模式
 
 ```yaml
 items#0:
   default:topaz_helmet:
     debug: true
-    template: default:topaz_armor
-    arguments:
-      part: helmet
+    模板: default:topaz_armor
+    参数:
+      part : helmet
       slot: head
 ```

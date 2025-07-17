@@ -1,10 +1,10 @@
-# 🌳 Tree
+# :decruous_tree: Tree
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/dnabesUIDYkJCJAmbjA5/image.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/RbdTh3SUCgVxaUD53ul8/image.png" alt=""><figcaption></figcaption></figure>
 
-## Configured Feature
+## 配置的功能
 
 ```json
 {
@@ -58,7 +58,7 @@
 }
 ```
 
-## Placed Feature
+## 已放置的功能
 
 ```json
 {
@@ -100,4 +100,4 @@
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/4l5Kl4kRCahKS8C50KBe/image.png" alt=""><figcaption></figcaption></figure>
 
-{% file src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/DOyv1N9EYaDAz6OxKQrJ/palm_tree.zip" %}
+{% file src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/Doyv1N9EYaDAz6OxKQrJ/palm_tree.zip" %}

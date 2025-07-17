@@ -1,23 +1,23 @@
 ---
-description: This page mainly explains how to add new templates to your server.
+description: 此页主要解释了如何向您的服务器添加新模板。
 ---
 
-# 📄 Templates \[MUST READ]
+# 📄 模板\[MUST READ]
 
 {% hint style="danger" %}
-The following content applies to CraftEngine 0.0.57 and above. If you update to version 0.0.57 or newer, you need to use the command `/ce debug migrate-templates` to migrate the old templates.
+以下内容适用于CraftEngine 0.0.57 及以上。 如果您更新到 0.0.57 或更高版本，您需要使用命令`/ce debug migrate-templates` 来迁移旧模板。
 {% endhint %}
 
-## Introduction
+## 一. 导言
 
-The plugin boasts an exceptionally high degree of customization, but it's impossible to configure it without providing any settings. Even a very brief option requires a line in your YAML file. With numerous such options, a configuration file can become excessively long. Therefore, the plugin has introduced a template system, allowing you to define a base template and use parameters and overrides to fill in or overwrite certain parameters, significantly simplifying the process and reducing the time spent on repetitive configurations.
+插件预示着异常高的自定义程度，但如果不提供任何设置，就无法配置它。 即使是非常简短的选项，在您的 YAML 文件中需要一行。 由于这种选项众多，配置文件可能过长。 因此，插件引入了一个模板系统， 允许您定义基本模板和使用参数并覆盖或覆盖某些参数， 大大简化程序，缩短重复配置的时间。
 
-## How it works?
+## 它是如何运作的？
 
-To configure a template, you need to use `templates` as the root key in your YAML file. The first thing under `templates` is your template's name. In the example below, the template is called **`namespace:my_first_template`**. Everything under that name is the actual template content.
+要配置模板，您需要使用 `templates` 作为您的 YAML 文件中的根键。 `templates`下的第一件事是你的模板名称。 在下面的示例中，模板叫做\*\*`namespace:my_first_template`\*\*。 该名称下的一切都是实际模板内容。
 
 ```yaml
-templates:
+模板：
   namespace:my_first_template:
     option_1: true
     option_2: false
@@ -28,21 +28,21 @@ templates:
       hello: world
 ```
 
-Check out this quick animation to see how the plugin applies the template:
+查看此快速动画以查看插件如何应用模板：
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2F0JyPNp4niJkzAGHID1Kv%2Ftemplate.gif?alt=media&#x26;token=cfecd8c1-d494-407f-a5db-ba2cce189f13" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-`namespace:template_id` serves as the unique identifier for your template. This name must be used whenever referencing or invoking this template elsewhere.
+`namespace:template_id` 是您的模板的唯一标识符。 此名称必须在任何时候被用于引用或在其他地方引用此模板。
 {% endhint %}
 
 {% hint style="success" %}
-The configuration area under `namespace:template_id` is entirely customizable, as long as it adheres to YAML syntax. You have complete freedom to define it according to your needs.
+`namespace:template_id`下的配置区域完全可以自定义，但只要它遵守YAML 语法。 您有完全的自由根据您的需要定义它。
 {% endhint %}
 
-## Multiple Templates
+## 多个模板
 
-You can combine multiple templates by setting up the `template` as a list.
+您可以通过设置 `template` 作为列表来合并多个模板。
 
 ```yaml
 items:
@@ -53,14 +53,14 @@ items:
 ```
 
 {% hint style="warning" %}
-**Heads up:** If two templates have the same setting, the one below will overwrite the one above. But if the setting is a list, they’ll merge into one combined list instead.
+**浮动：** 如果两个模板有相同的设置，下面的一个将覆盖上面的一个。 但如果设置是一个列表, 它们将会合并成一个合并列表。
 {% endhint %}
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FWiQor59iwPiY7n185412%2Fmultiple.gif?alt=media&#x26;token=ac0c9ff6-d883-4666-81aa-2b279a56e6a2" alt=""><figcaption></figcaption></figure>
 
-## Arguments
+## 参数
 
-You can define parameters in template using `${xxx}`, like `${nutrition}` or `${saturation}`.  Then, when calling the template, use the **`"arguments"`** section to set the parameter values. Here's a quick example:
+You can define parameters in template using `${xxx}`, like `${nutrition}` or `${saturation}`.  然后调用模板时，使用 **\`"参数"** 部分来设置参数值。 下面是一个快速示例：
 
 ```yaml
 templates:
@@ -81,25 +81,25 @@ items:
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FEBlTqSuHobBp0HHdAlwK%2Farguments.gif?alt=media&#x26;token=358280cf-c114-41f9-a715-93b6a0edc395" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-If you need to use curly braces `{}` as normal text (not as parameters), just escape them with a backslash like `\{` or `\}`.&#x20;
+如果您需要使用大括号`{}`作为正则文本(不作为参数)， 只需用反斜杠逃脱他们，如`\{` 或 `\}` 。&#x20;
 
 `\${Hello world}`
 {% endhint %}
 
 {% hint style="success" %}
-To set default values for parameters, add `:-` after the parameter name - for example:
+要设置参数的默认值，请在参数名称之后添加 ":-" - 例如：
 
 - `${nutrition:-1}`
 - `${saturation:-2.5d}`
 - `${map:-{aa:bb,cc:ddd}}`
 - `${string:-"1234"}`
 
-The default values follow Minecraft's SNBT format (the same format used when specifying NBT data in commands).
+默认值沿用Minecraft的 SNBT 格式(在命令中指定 NBT 数据时使用相同的格式)。
 {% endhint %}
 
-## Overrides
+## 覆盖
 
-Overrides completely replace whatever's in the specified config path—including lists and maps. No merging, just a full swap.
+覆盖完全替换指定的配置路径中的任何东西——包括列表和地图。 没有合并，只是完全交换。
 
 ```yaml
 items:
@@ -114,9 +114,9 @@ items:
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FVSIK99qhdnIUTu7ibtfg%2Foverrides.gif?alt=media&#x26;token=bcdbc323-c3dc-4eb8-aa3e-233131894689" alt=""><figcaption></figcaption></figure>
 
-## Merges
+## 合并
 
-Merges deeply combines two config sections, including all lists - nothing gets left behind. Basically, merges function almost exactly like multiple templates.
+合并时深入合并了两个配置部分，包括所有列表 - 没有留下任何内容。 基本上，合并函数几乎完全像多个模板。
 
 ```yaml
 items:

@@ -1,11 +1,11 @@
-# 🌍 Server Lang (i18n)
+# :glube_showing_Europe-Africa: Server Lang (i18n)
 
-i18n is utilized for server-side localization. If you are seeking client-side localization, please consult the [client-lang-lang](client-lang-lang "mention"). In general, typical users do not require the use of i18n, as it is primarily designed for providers of public model and asset packs who offer multilingual support.
+i18n 用于服务器端本地化。 如果您正在寻求客户端本地化，请咨询 [client-lang-lang](client-lang-lang "提及")。 一般来说，典型的用户不要求使用i18n， 它主要是为提供多种语言支持的公共模型和资产包的提供者设计的。
 
-To use i18n, please refer to the following link: [#less-than-i18n-id-greater-than](../../text-format#less-than-i18n-id-greater-than "mention").
+若要使用 i18n，请参阅以下链接：[#少于-i18n-id-greater](../../text-format#less-than-i18n-id-greater-than “提及”)。
 
 {% hint style="info" %}
-The country or region specification for the language is optional (for example, "en\_us" can be simplified to "en"). The plugin will first attempt to find a language tailored to the specific country or region. If such a language is not available, it will then search for the general language. If the language is also not found, the plugin will default to using English (en) as the fallback language.
+语言的国家或区域规范是可选的(例如"en\_us"可以简化为“en")。 插件将首先尝试找到适合特定国家或区域的语言。 如果没有这种语文，则将寻找一般语文。 如果没有找到语言，插件将默认使用英语(en)作为后备语言。
 {% endhint %}
 
 ```yaml
@@ -61,7 +61,7 @@ i18n:
 ```
 
 {% hint style="success" %}
-You can nest other tags within i18n for use.
+您可以在 i18n 内排料其他标签。
 
 ```yaml
 i18n:

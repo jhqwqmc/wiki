@@ -1,10 +1,10 @@
 ---
-description: This page mainly explains how to add new sounds to your server.
+description: 此页主要解释了如何添加新声音到您的服务器。
 ---
 
-# 🔊 Sounds
+# :speaker_hig_volume: 声音
 
-## Sound
+## 声音
 
 ```yaml
 sounds:
@@ -32,12 +32,12 @@ sounds:
         type: "file"
 ```
 
-When you use the `/playsound` command to play a sound, it should actually be referred to as a sound event, while the actual sounds are located under the `sounds` list. You can check the [Minecraft Wiki](https://minecraft.wiki/w/Sounds.json) to understand the effects corresponding to each parameter. The plugin does not provide extensive descriptions here because the Minecraft Wiki already explains each part very clearly, and CraftEngine uses the same configuration option names as those described in the wiki.
+当您使用 `/playsound` 命令播放声音时，它实际上应该被称为声音事件， 而实际声音位于声音列表下。 你可以检查 [Minecraft Wiki](https://minecraft.wiki/w/Sounds.json) 来了解每个参数对应的效果。 这个插件没有在这里提供详尽的描述，因为Minecraft Wiki 已经非常清楚地解释了每个部分， 和 CraftEngine 使用与wiki中描述的相同的配置选项名称。
 
-## Jukebox Song (1.21+)
+## 唱片机歌曲(1.21+)
 
 {% hint style="danger" %}
-Due to the fact that Minecraft's registry becomes immutable once registered, you will need to restart the server in order to apply any new modifications. However, you can register a new song in real-time by modifying the configuration ID.
+由于Minecraft的注册在注册后变得不可变， 您需要重新启动服务器才能应用任何新的修改。 然而，您可以通过修改配置ID实时注册新歌曲。
 {% endhint %}
 
 ```yaml

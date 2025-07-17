@@ -1,3 +1,3 @@
-# 🍪 Trim Patterns/Materials
+# 🍪 修剪模式/材料
 
-s
+秒

@@ -1,4 +1,4 @@
-# 🕹️ Item Behaviors
+# 🕹️ 项目行为
 
-Unlike [item-settings](item-settings "mention"), [item-behaviors](item-behaviors "mention") is more about how something interacts—like the rules or logic behind those interactions. It checks each interaction rule **one by one, in order**, and stops at the **first valid one** it finds. Once that happens, any remaining behaviors **won’t even be checked**.
+不同于 [item-settings](item-settings “提及”)， [item-behaviors](item-behaviors “提及”)，更多的是关于什么是相互作用——如这些互动背后的规则或逻辑。 它检查每个交互规则**一个，按顺序**\*，然后在 **第一个有效** 处停止查找。 一旦发生这种情况，任何剩余的行为**甚至不会被检查**。
 

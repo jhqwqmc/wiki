@@ -1,13 +1,13 @@
-# 🪓 Strippable Block
+# :ax: 可拆除块
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/LazB9XAUsqIk7I4fPu2m/image.png" alt=""><figcaption></figcaption></figure>
 
-The `Strippable Block` is a type of block that can be stripped by right-clicking with an axe, and it is primarily used for tree logs.
+`Strippable Block` 是一种可以通过右键点击坐标轴去除的方块，它主要用于树木日志。
 
 ```yaml
-blocks:
-  default:palm_log:
-    behavior:
-      type: strippable_block
-      stripped: default:stripped_palm_log
+块:
+  默认 palm_log:
+    行为:
+      类型: strippable_block
+      删除: 默认: stripped_palm_log
 ```

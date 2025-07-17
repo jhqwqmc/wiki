@@ -4,13 +4,13 @@
 lang:
   en_us:
     item.custom.palm_leaves: Palm Leaves
-    item.custom.palm_log: Palm Log
+    item.custom.palm_log: Palm 日志
 ```
 
-In the absence of language files, Minecraft will default to using en\_us. Therefore, it is highly recommended to configure en\_us if you are creating a **new** translation key.&#x20;
+在没有语言文件的情况下，Minecraft将默认使用 en\_us Therefore, it is highly recommended to configure en\_us if you are creating a **new** translation key.&#x20;
 
 {% hint style="success" %}
-To render client side translation, please insert [https://docs.advntr.dev/minimessage/format.html#translatable](https://docs.advntr.dev/minimessage/format.html#translatable)
+要渲染客户端翻译，请插入 [https://docs.advntr.dev/minimessage/format.html#translatable](https://docs.advntr.dev/minimessage/格式.html#translatable)
 {% endhint %}
 
 {% hint style="info" %}
@@ -18,7 +18,7 @@ Read Minecraft Wiki for how client side translation works\
 [https://minecraft.wiki/w/Resource\_pack#Language](https://minecraft.wiki/w/Resource_pack#Language)
 {% endhint %}
 
-If you wish to overwrite all the languages, please use "all".
+如果您想要覆盖所有语言，请使用“全部”。
 
 ```yaml
 lang:

@@ -1,23 +1,23 @@
 ---
 description: >-
-  Set vanilla NBT/Components for items to utilize certain native Minecraft functionalities.
+  设置原版 NBT/组件来使用某些本地Minecraft功能。
 ---
 
-# 🔢 Item Data
+# :input_number: 项目数据
 
-## What is Item Data?
+## 什么是项目数据？
 
-Item Data refers to the NBT (Named Binary Tag) of an item in older versions, or the item Components in version 1.20.5 and above. Through this data, we can customize various aspects of an item such as its name, description, attributes, and other functionalities.
+项目数据是指旧版本中项目的NBT (命名二进制标签)，或1.20.5及以上版本中的项目组件。 通过这种数据，我们可以自定义一个项目的各个方面，例如名称、描述、属性和其他功能。
 
-## External Data
+## 外部数据
 
-If you want a CraftEngine item to retain the data of an external plugin's item, follow this configuration:
+如果你想要一个 CraftEngine 项目保留外部插件项目的数据，请按照此配置：
 
 ```yaml
-items:
-  default:example_item:
+项目:
+  默认值:example_item:
     data:
-      external:
+      外部:
         plugin: neigeitems
         id: example_item
 ```
@@ -26,9 +26,9 @@ items:
 [external-item-sources](../../compatibility/external-item-sources)
 {% endcontent-ref %}
 
-## Hard-coded Data
+## 硬编码数据
 
-Hardcoded data, in this context, means that the configuration formats are provided and maintained by plugin, which ensures compatibility across different versions. These formats are defined by the plugin, so they may differ from the standard NBT (Named Binary Tag) or Components formats used by the game itself. The advantage of this approach is that the plugin handles all the maintenance, including version compatibility, so users do not need to worry about changes or updates between game versions.
+在这种情况下，硬代码数据意味着配置格式由插件提供和维护，从而确保不同版本之间的兼容性。 这些格式由插件定义， 这样他们可能不同于标准的 NBT (命名二进制标签) 或游戏本身使用的组件格式。 此方法的优点是插件处理所有维护，包括版本兼容性。 所以用户不需要担心游戏版本之间的更改或更新。
 
 ```yaml
 items:
@@ -37,9 +37,9 @@ items:
       item-name: "<!i><#FF8C00>Topaz Rod"
 ```
 
-### item-name
+### 项目名称
 
-Determines the default name of this item, unlike the `custom-name`, this name can't be erased using an anvil, won't be italicized, and does not show in some labels, such as banner markers and item frames.
+确定此项目的默认名称，不像“自定义名称”，这个名称不能被删除， 不会被斜体化，并且不会在某些标签，例如横幅标记和项目帧中显示。
 
 ```yaml
 items:
@@ -49,9 +49,9 @@ items:
                                           # don't have item_name component
 ```
 
-### custom-name
+### 自定义名称
 
-Used to specify the item's custom name, like you can in an anvil.
+用于指定物品的自定义名称，就像你可以在一个魔鬼里。
 
 ```yaml
 items:
@@ -60,9 +60,9 @@ items:
       custom-name: "<!i><#FF8C00>Topaz Rod"
 ```
 
-### lore
+### 青色
 
-Determines the displayed description of the item.
+确定项目显示的描述。
 
 ```yaml
 items:
@@ -72,9 +72,9 @@ items:
         - "What a shiny rod!"
 ```
 
-### unbreakable
+### 不可破坏的
 
-Determines whether the item is unbreakable
+确定项目是不可破坏的
 
 ```yaml
 items:
@@ -83,9 +83,9 @@ items:
       unbreakable: true
 ```
 
-### enchantment
+### 附魔效果
 
-Determines the enchantments of the item
+确定项目的附魔项
 
 ```yaml
 items:
@@ -96,9 +96,9 @@ items:
         custom:enchant: 3
 ```
 
-### dyed-color
+### 染色颜色
 
-Determines the color of the item
+确定项目的颜色
 
 ```yaml
 items:
@@ -107,7 +107,7 @@ items:
       dyed-color: 255,255,255
 ```
 
-### custom-model-data
+### 自定义模型数据
 
 ```yaml
 items:
@@ -116,9 +116,9 @@ items:
       custom-model-data: 100
 ```
 
-### hide-tooltip
+### 隐藏工具提示
 
-Hides any tooltips provided by the specified **components** on this item. This works for all versions as plugin handles the cross version compatibility. Formerly known as `HideFlags`
+隐藏此项目上指定的 **组件** 提供的任何工具提示。 这适用于所有版本，因为插件处理交叉版本兼容性。 前称`HideFlags`
 
 ```yaml
 items:
@@ -130,9 +130,9 @@ items:
         - attribute_modifiers
 ```
 
-### attribute-modifiers
+### 属性修改器
 
-Applies [attribute modifiers](https://minecraft.wiki/w/Attribute_modifiers) onto items.
+应用于项目 [属性修改者] (https://minecraft.wiki/w/Attribute_modifiers)
 
 ```yaml
 items:
@@ -150,24 +150,24 @@ items:
 ```
 
 {% hint style="success" %}
-You can safely use the latest attribute names on legacy versions as plugin will help you convert them.\
-Lastest attribute names can be found on [https://minecraft.wiki/w/Attribute](https://minecraft.wiki/w/Attribute)
+您可以安全地在旧版本上使用最新的属性名称，因为插件将帮助您转换它们。
+最后属性名称可以在 [https://minecraft.wiki/w/Attribute](https://minecraft.wiki/w/Attribute)
 {% endhint %}
 
-### food (1.20.5+)
+### 食物(1.20.5+)
 
 ```yaml
-items:
-  default:magic_apple:
-    material: apple
-    data:
-      food: 
-        nutrition: 5
-        saturation: 3.5
-        can-always-eat: false
+项目：
+  默认：magic_aple：
+    材料：Appe
+    数据：
+      食物： 
+        营养：5
+        饱和度：3.5
+        通风：false
 ```
 
-### jukebox-playable (1.21+)
+### jukebox 可播放(1.21+)
 
 ```yaml
 items:
@@ -177,7 +177,7 @@ items:
       jukebox-playable: default:credits_music
 ```
 
-### item-model (1.21.2+)
+### 项目型号(1.21.2+)
 
 ```yaml
 items:
@@ -188,7 +188,7 @@ items:
 
 ### tooltip-style (1.21.2+)
 
-Determines the tooltip style of the item
+确定项目的工具提示样式
 
 ```yaml
 items:
@@ -200,14 +200,14 @@ items:
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FG5cqs5c033VOfKiw2TJu%2Fimage.png?alt=media&#x26;token=4c517089-ab55-4fc8-adfe-c26bb7176e91" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-To create a tooltip style, you must place the texture in the directory as follows.
+要创建工具提示风格，您必须将纹理放置在下面的目录中。
 
 [https://minecraft.wiki/w/Data\_component\_format/tooltip\_style](https://minecraft.wiki/w/Data_component_format/tooltip_style)
 {% endhint %}
 
-### trim
+### 修饰
 
-apply a decorative alteration to a [tool](https://minecraft.wiki/w/Tool) or [armor](https://minecraft.wiki/w/Armor)
+对 [tool](https://minecraft.wiki/w/Tool) 或 [armor](https://minecraft.wiki/w/Armor) 应用装饰性修改
 
 ```yaml
 trim:
@@ -215,65 +215,65 @@ trim:
   material: iron # https://minecraft.wiki/w/Smithing#Material
 ```
 
-### equippable (1.21.2+)
+### 可装备(1.21.2+)
 
-If present, this item can be equipped in the specified slot.
+如果存在，这个物品可以在指定的位置上装备起来。
 
 ```yaml
-equippable:
-  # The slot to put the item on
-  slot: head # HEAD / CHEST / LEGS / FEET / BODY / MAIN_HAND / OFF_HAND / SADDLE
+设备：
+  # 将项目放在
+  栏位上的槽位：head # HEAD / CHEST/ LEGS / FEEET / BODY / MAIN_HAND / OFF_HAND / SADDLEE
   
-  # Optional Arguments
-  # The directory this refers to is assets/<namespace>/equipment/<id>.json
+  # 可选参数
+  # 指的目录是资产/<namespace>/equipment/<id>son
   asset-id: minecraft:topaz
-  # The resource location of the overlay texture to use when equipped. The directory this refers to is assets/<namespace>/textures/<id>.
-  camera-overlay: namespace:id
-  # Whether the item can be dispensed by using a dispenser.
-  dispensable: true
-  # Whether this item is damaged when the wearing entity is damaged.
-  damage-on-hurt: true
-  # Whether the item can be equipped into the relevant slot by right-clicking.
-  swappable: true
-  # >= 1.21.5
-  # Whether this item can be equipped onto a target mob by pressing use on it (as long as this item can be equipped on the target at all)
-  equip-on-interact: true
+  # 装备时使用的叠加层纹理的资源位置。 此处指的目录是assets/<namespace>/textures/<id>
+  相机叠加层：namespace:id
+  # 项目是否可以通过使用配电器来分配。
+  可撒布: true
+  # 当穿戴者实体损坏时此物品是否受损。
+  有害无益：true
+  # 该物品是否可以通过右击装备到相关的栏位。
+  可交换：true
+  # >= 1.21。
+  # 这个项目是否可以通过在它上按下使用来装备到目标生物上(只要这个项目能够在目标上装备)
+  设备之间：true
 ```
 
-## Customizable Data
+## 可自定义的数据
 
-Customizable Data is not maintained by plugins, and its format can change with updates to Minecraft, particularly with the frequent recent changes to Components. If you want to avoid extensive configuration overhauls due to version updates, you might consider using templates to establish a standardized configuration file format. When a new version is released, you can simply update the template to accommodate any changes. If you are unfamiliar with how to use templates, please make sure to read the guide provided at [templates-must-read](../templates-must-read "mention"). This approach can help streamline the update process and reduce the effort required to keep your configurations compatible with the latest game versions.
+可自定义的数据不是由插件维护的，其格式可以随着Minecraft的更新而改变，尤其是在组件最近频繁更改的情况下。 如果您想要避免因为版本更新而进行大规模的配置大修，您可以考虑使用模板来建立标准化的配置文件格式。 发布新版本后，您可以简单地更新模板以适应任何更改。 如果您不熟悉如何使用模板，请务必阅读 [templates-must-read](../templates-must-read "提及")所提供的指南。 这个方法可以帮助简化更新过程，减少您的配置与最新游戏版本兼容所需的努力。
 
 ### NBT (1.20-1.20.4)
 
 {% hint style="danger" %}
-Since NBT (Named Binary Tag) has become outdated, it will not be discussed in detail here.&#x20;
+由于NBT (命名二进制标签)已过时，将不会在此详细讨论。&#x20;
 
 [https://minecraft.wiki/w/Item\_format/Before\_1.20.5](https://minecraft.wiki/w/Item_format/Before_1.20.5)
 {% endhint %}
 
 ```yaml
-items:
-  default:topaz_rod:
-    data:
+项目:
+  默认值:topaz_rod:
+    数据:
       nbt:
         CustomModelData: 1000
 ```
 
-### Components (1.20.5+)
+### 组件(1.20.5+)
 
-The format for custom Components strictly adheres to the [Minecraft Wiki](https://minecraft.wiki/w/Data_component_format) guidelines. Below, I will guide you through a few examples to help you become familiar with how to configure custom Components.
+自定义组件的格式严格遵循[Minecraft Wiki](https://minecraft.wiki/w/Data_component_format) 准则。 下面我将引导你们通过几个示例来帮助你们熟悉如何配置自定义组件。
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/NrlWy1Cxy4vn2GK1ODdL/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-From the image, we can see that `max_damage` accepts an `I` (which stands for an integer type parameter). Therefore, in our configuration, we simply need to use a numerical value directly.
+从图像中我们可以看到`max_damage` 接受一个 `I` (代表整数类型参数)。 因此，在我们的组合中，我们只需直接使用一个数值。
 
 ```yaml
-items:
+项目：
   guide:test:
     data:
-      components:
+      component:
         minecraft:max_damage: 128
 ```
 
@@ -282,17 +282,17 @@ items:
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/7cqvxKcjpE2LTlsbTj9K/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-From the image, we can see that `food` requires three parameters: `nutrition` of type `int`, `saturation` of type `float`, and `can_always_eat` of type `boolean`.
+从图像中，我们可以看到`food` 需要三个参数：`int`类型`的营养`， `saturation`类型`float`和`boolean`类型`can_always_eat`
 
 ```yaml
-items:
+项目：
   guide:test:
     data:
-      components:
+      component:
         minecraft:food:
           nutrition: 4
-          saturation: 2.0
-          can_always_eat: false
+          satur: 2.0
+          can_always_eat: falsal
 ```
 
 {% endhint %}
@@ -300,34 +300,34 @@ items:
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/B6jF06WTXXXnonNs0kqo/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Now, let's try working with a compound tag. The `{}` signifies that you need to open a new section in your YAML configuration.
+现在，让我们尝试使用复合标签。 "{}" 表示您需要在您的 YAML 配置中打开一个新的部分。
 
 ```yaml
-items:
-  guide:test:
-    data:
-      components:
-        minecraft:enchantments:
-          levels:
+项目：
+  指南:test:
+    数据:
+      组件:
+        minecraft:enchants:
+          级别:
             minecraft:sharpness: 1
           show_in_tooltip: false
 ```
 
-However, upon closer inspection of the wiki, you'll notice that this method becomes obsolete in version 1.21.5. When 1.21.5 is released, you will need to update your configuration file as follows:
+然而，在仔细检查wiki后，您会注意到该方法在1.21.5版本中已过时。 当发布1.21.5时，您需要更新您的配置文件如下：
 
 ```yaml
-items:
-  guide:test:
-    data:
-      components:
-        minecraft:enchantments:
+项目：
+  指南：测试：
+    数据：
+      组件：
+        minecraft:enchants:
           minecraft:sharpness: 1
 ```
 
 {% endhint %}
 
 {% hint style="success" %}
-You can also configure the components in json/snbt format
+您也可以以json/snbt 格式配置组件
 
 ```yaml
 minecraft:custom_data: "(json) {\"test\":1}"
@@ -336,9 +336,9 @@ minecraft:food: "(snbt) {nutrition:5,saturation:2.5}"
 
 {% endhint %}
 
-### Remove Components (1.20.5+)
+### 删除组件 (1.20.5+)
 
-Removes the component from the item
+从项目中删除组件
 
 ```yaml
 items:

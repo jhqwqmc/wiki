@@ -1,23 +1,23 @@
-# 🌴 Sapling Block
+# :palm_tree：锯切块
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/2qxcorsLzCM5Vs1MyzC8/image.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/THfxu33nMbDazLNxRNnE/image.png" alt=""><figcaption></figcaption></figure>
 
-Once a `configured feature` is specified, the  [sapling-block](sapling-block "mention")  can grow into the designated tree configuration during a random tick event.
+一旦指定了 "配置功能" ，  [sapling-block](sapling-block "提及") 可以在随机的牌照事件中成长为指定的树形配置。
 
 ```yaml
-blocks:
-  default:palm_sapling:
-    behavior:
-      type: sapling_block
-      # This requires you to register a custom tree configuration with data pack
-      # To prevent errors, we use tree feature from vanilla here
-      feature: minecraft:fancy_oak
-      bone-meal-success-chance: 0.45
-      grow-speed: 0.7  # (0-1)
+块:
+  默认:palm_sapling:
+    行为:
+      类型: sapling_block
+      # 这需要您注册一个自定义树配置，数据包为
+      # 以防止错误, 我们在这里使用原版树木功能，
+      功能：minecraft:fancy_oak
+      bone-meal-success-opportunity: 0。 5
+      增长速度：0.7# (0-1)
 ```
 
 {% hint style="warning" %}
-Please note that all sapling blocks must have a property named `stage` of type `int`. If you are unsure how to set up properties, please refer to [block-states](../block-states "mention"). The more `stage` values a sapling has, the longer its required growth time. In the vanilla game, saplings only have two stages: 0 and 1.
+请注意，所有采树块都必须有名为 `int` 类型的 `stage` 属性。 如果您不确定如何设置属性，请参阅 [block-states](../block-states "提及")。 `stage`值越大，树苗的增长时间就越长。 在原版游戏中，锯齿仅有两个阶段：0和1。
 {% endhint %}

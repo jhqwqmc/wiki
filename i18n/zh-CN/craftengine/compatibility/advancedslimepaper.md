@@ -1,7 +1,7 @@
 # 🟢 AdvancedSlimePaper
 
 {% hint style="info" %}
-**CraftEngine Features Native SlimeWorld Format Integration**
+**CraftEngine 功能原生的 SlimeWorld 格式集成**
 
-CraftEngine automatically saves its chunk data in SlimeWorld format - no configuration needed!
+CraftEngine 自动以 SlimeWorld格式保存其区块数据 - 无需配置！
 {% endhint %}

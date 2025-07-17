@@ -1,20 +1,20 @@
-# 🍁 Leaves Block
+# 🍁 叶块
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/cOCjIhMj2mDHrpev05Zl/image.png" alt=""><figcaption></figcaption></figure>
 
-[leaves-block](leaves-block "mention") possess three properties: `distance` (the distance from the tree trunk), `persistent` (whether the block can exist permanently), and `waterlogged` (whether the block contains water \[optional]). The `distance` property enables naturally generated leaves to decay over time, while the `persistent` property ensures that player-placed leaves remain permanently.
+[leaves-block](leaves-block “提到”拥有三个属性：“距离”(距离树干距离)， `persistent` (块是否可以永久存在) 和 `水流量` (块是否包含水\[optional]) “距离”属性使自然生成的假期随着时间的推移而衰减，而“持久”属性确保玩家安置的假期永远保持不变。
 
 ```yaml
-blocks:
-  default:palm_leaves:
-    behavior:
-      type: leaves_block
+块:
+  默认 palm_leaves:
+    行为:
+      类型: leaves_block
 ```
 
 {% hint style="warning" %}
-Please note that all leaf blocks must have the `persistent` (boolean) and `distance` (int) properties, with `distance` being at least 1. If you are unsure how to configure these properties, please refer to [block-states](../block-states "mention").
+请注意，所有的叶块都必须具有`persistent` (boolean) 和 `distance` (int) 属性，其中`distance` 至少是1。 如果您不确定如何配置这些属性，请参阅 [block-states](../block-states "提及")。
 {% endhint %}
 
 {% hint style="success" %}
-You can increase or decrease the `distance` value as needed. For particularly large trees, to prevent leaf decay, you can set the `distance` to 10 or higher. In the vanilla game, the maximum `distance` for leaves is 7.
+您可以根据需要增加或减少 "Distance" 值。 对于特别大的树木，为了防止叶衰变，你可以将 "距离" 设置为 10 或更高。 在原版游戏中，叶的最大“距离”为7。
 {% endhint %}

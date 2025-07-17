@@ -1,34 +1,34 @@
 ---
 description: >-
-  Unlike data, the contents within settings pertain to special mechanisms processed by the plugin.
+  与数据不同，设置中的内容涉及插件处理的特殊机制。
 ---
 
-# ⚙️ Item Settings
+# ⚙️ 项目设置
 
-## fuel-time
+## 燃料时间
 
-Determines how many ticks can be burned
+确定可以烧毁多少只ticks
 
 ```yaml
-fuel-time: 100
+燃料时间：100
 ```
 
 <figure><img src="https://content.gitbook.com/content/OgvQ1fEJPROp7131PPlK/blobs/ETo97tqrp6GsxMMc4zOX/image.png" alt=""><figcaption></figcaption></figure>
 
-## tags
+## 标签
 
-See [recipes](../recipes "mention")
+见 [recipes](../recipes "提及")
 
 ```yaml
-tags:
+标签：
   - "default:palm_logs"
   - "minecraft:logs"
   - "minecraft:logs_that_burn"
 ```
 
-## equipment
+## 设备
 
-Apply the equipment to the item. See [item-equipment](item-equipment "mention")
+将设备应用于该项目。 见 [item-equipment](item-equipment "提及")
 
 ```yaml
 equipment:
@@ -62,41 +62,41 @@ equipment:
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FDrJjArxUMGqZdTcFNlbB%2Fimage.png?alt=media&#x26;token=b507bcfd-b23f-42d5-a610-51e45544b465" alt=""><figcaption></figcaption></figure>
 
-## repairable
+## 可修复
 
-Decides if the item can be repaired through crafting table/anvil (Default: true)
+决定是否可以通过合成表/铁修理物品 (默认：true)
 
 ```yaml
-repairable: true
+修复：正确
 ```
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FsFmbIZ3gKhZRd0i2aJ8N%2Fimage.png?alt=media&#x26;token=105464c8-4910-4b0e-9e68-a3f968468e99" alt=""><figcaption></figcaption></figure>
 
-## anvil-repair-item
+## 相机修理物品
 
-Determines how much durability a given item provides when repairing
+确定某个项目在修复时的耐久程度
 
 ```yaml
-anvil-repair-item:
-  - target: "#topaz_tools"
-    amount: 20  # restores fixed durability
-  - target:
+anvil-修理项目:
+  - 目标: "#topaz_tools"
+    数量: 20 # 还原固定耐久性
+  - 目标:
       - "minecraft:iron_pickaxe"
       - "minecraft:shears"
-    percent: 0.25  # 0.25 = 25%, restores n% total durability
+    %: 0. 5 # 0.25 = 25%，恢复总耐久性 n%
 ```
 
-## renameable
+## 可重命名的
 
-Determines if the item can be renamed in anvil. (Default: true)
+确定该项是否可以重命名为anvil。 (默认：true)
 
 ```yaml
-renameable: false
+可重命名：false
 ```
 
-## projectile
+## 抛射物
 
-Creates a custom projectile entity based on the item. It supports `trident`, `arrow`, `snowball` and more.
+根据项目创建一个自定义抛射物体。 它支持 `trident`, `arrow`, `snowball` 等更多。
 
 ```yaml
 projectile:
@@ -110,15 +110,15 @@ projectile:
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FMXNMpGU2nEZuaIZZdXje%2Fimage.png?alt=media&#x26;token=a8d196fb-e093-4c29-a796-83ad28ca3cac" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-The way you model directly affects the `rotation` arguments in the configuration file.
+您的模型直接影响配置文件中的 `rotation` 参数。
 
 ![](https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2F6VmwwP0bhtIijZEsXG2e%2Fimage.png?alt=media\&token=df1e2bd8-d608-4c19-9cf5-dcd2cc534505)![](https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FL7y7eP6xIqwRXrLKlqcb%2Fimage.png?alt=media\&token=df7f1d90-dffd-4db4-b3e9-c86195564187)\
 No matter which modeling method you use, the most important thing is to make the sharp part of the trident in the position shown in the picture above to ensure the best hitting point.
 {% endhint %}
 
-## dyeable
+## 可染料
 
-Decides if the item([leather armor](https://minecraft.wiki/w/Leather_armor) or [wolf armor](https://minecraft.wiki/w/Wolf_armor)) can be dyed in crafting tables. (Default: true)
+Decides if the item([leather armor](https://minecraft.wiki/w/Leather_armor) or [wolf armor](https://minecraft.wiki/w/Wolf_armor)) can be dyed in crafting tables. (默认：true)
 
 ```yaml
 dyeable: true
@@ -126,70 +126,70 @@ dyeable: true
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FKPAQnbm7LyeQtQ6UHHyp%2Fimage.png?alt=media&#x26;token=bbe9e687-6486-451f-8762-32849b4c0e34" alt=""><figcaption></figcaption></figure>
 
-## food
+## 食物：
 
 ```yaml
-food:
-  nutrition: 5  # 0~20, integer
-  saturation: 3.5  # 0~10, float
+食物:
+  营养: 5 # 0~20, 整数
+  饱和度: 3.5 # 0~10, float
 ```
 
 {% hint style="warning" %}
 Better to use `food` components on a 1.20.5+ server
 {% endhint %}
 
-## consume-replacement
+## 消费替换
 
-Set the return item after consuming the item. For example, after the player drinks the water bottle, the empty bottle will be returned. (Default: null)
+在消费后设置返回项。 例如，在玩家喝水瓶后，将返回空瓶。 (默认：空)
 
 ```yaml
-consume-replacement: minecraft:apple
+消费替换：矿工:苹果
 ```
 
-## craft-remaining-item
+## 余下的手工物品
 
-Choose whether items should return other items when the crafting recipe is finished. This option only works for custom items with a max stack size of 1
+选择在制造配方完成时是否返回其他项目。 此选项仅适用于最大堆栈大小为1的自定义项目
 
 ```yaml
-craft-remaining-item: bucket
+余下的手工物品：桶子
 ```
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FG5Gx2xMlH4SspQC1P66y%2Fimage.png?alt=media&#x26;token=5a6e6d26-8730-4f07-ae94-dabb0fc3b520" alt=""><figcaption></figcaption></figure>
 
-## invulnerable
+## 无敌的
 
 ```yaml
-invulnerable:
-  - lava
+无敌状态:
+  - 岩浆.
   - fire_tick
-  - block_explosion  # respawn anchor
-  - entity_explosion  # creeper, tnt
-  - lightning
-  - contact  # cactus
+  - block_sepred # respawn 锚点
+  - entity_deprest # creeper, tnt
+  - 闪烁
+  - 联系 # cactus
 ```
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FHYC5C0eMeqoVtNWk2QbI%2Fimage.png?alt=media&#x26;token=15fdae30-932b-4ab3-9a00-a81102e5dccf" alt=""><figcaption></figcaption></figure>
 
-## enchantable
+## 附魔法
 
-This option lets you block certain items from being used on the enchantment table. Tip: setting it to `true` won’t magically make unenchantable items enchantable. (Default: true)
+此选项允许您屏蔽某些项目在附魔表中使用。 提示：将其设为“true”将无法使不可更改的项目成为魔法附魔。 (默认：true)
 
 ```yaml
-enchantable: false
+附魔：false
 ```
 
-## compost-probability
+## compost概率
 
-This setting controls how likely it is for composting to succeed (Default: 0.5)
+这个设置控制它对堆肥成功的可能性(默认：0.5)
 
 ```yaml
-compost-probability: 0.5
+composability: 0.5
 ```
 
-## respect-repairable-component
+## 尊敬的可维修组件
 
-This controls if the items listed in `repairable` component can fix this item in anvil gui. (Default: false)
+如果在 "修理" 组件中列出的项目能够修复这个项目, 这种控制将被控制。 (默认：false)
 
 ```yaml
-respect-repairable-component: false
+尊重可修复组件：false
 ```

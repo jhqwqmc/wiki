@@ -1,27 +1,27 @@
 ---
-description: This page mainly tells how to add a new font
+description: 此页面主要说明如何添加新字体
 ---
 
-# ㊙️ Fonts
+# 秘️ Fonts
 
 ## TTF
 
 {% embed url="https://minecraft.wiki/w/Font#TTF_provider" %}
 
-For TTF fonts, you need to create a `default.json` file in the following path. If you already have a `default.json` file, simply append your font JSON to the bottom of the existing JSON file.
+对于TTF 字体，您需要在下面的路径中创建 `default.json` 文件。 如果您已经有一个 `default.json` 文件，只需将您的 JSON 字体附加到现有JSON 文件的底部。
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FiIqkr8gniPWWU3QCYKIS%2Fimage.png?alt=media&#x26;token=7c94e751-1cf2-4b1c-875d-39a7e7346f58" alt=""><figcaption></figcaption></figure>
 
-<pre class="language-json"><code class="lang-json"><strong>// default.json
-</strong>{
+<pre class="language-json"><code class="lang-json">A format@@1 // 默认。 Son
+</strong>Power
     "providers": [
-        {
-            "type": "ttf",
-            "file": "minecraft:custom_font.ttf",
-            "oversample": 10,
-            "size": 11
+        vol.
+            "ttf",
+            "file": "minecraft:custom_font tf",
+            "过多采样": 10,
+            "大小"：11
         }
-    ]
+
 }
 </code></pre>
 
@@ -29,17 +29,17 @@ For TTF fonts, you need to create a `default.json` file in the following path. I
 
 ## Bitmap
 
-{% embed url="https://minecraft.wiki/w/Font#Bitmap_provider" %}
+{% 嵌入的 url="https://minecraft.wiki/w/Font#Bitmap_provider" %}
 
-If you wish to replace the vanilla character images, simply place the following PNG files in the specified path as outlined below.
+如果您想要替换原版字符图像，请将以下PNG文件放置在下面概述的指定路径中。
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2Fb4x0H5SUIl3TSku2UKHa%2Fimage.png?alt=media&#x26;token=bffc7f87-97f0-4e5f-af5c-735ad8189d60" alt=""><figcaption></figcaption></figure>
 
 ## Unihex
 
-To configure the `unihex` font in Minecraft, which is relatively less common and rarely used, you can refer to the Minecraft Wiki for detailed instructions.
+要在Minecraft中配置 `unihex` 字体，这个字体相对较少，很少使用，您可以参考MinecraftWiki 获取详细说明。
 
-{% embed url="https://minecraft.wiki/w/Font#Unihex_provider" %}
+{% 嵌入的 url="https://minecraft.wiki/w/Font#Unhex_provider" %}
 
 ```json
 {

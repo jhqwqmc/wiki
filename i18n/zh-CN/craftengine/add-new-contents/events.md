@@ -1,349 +1,349 @@
-# 🪇 Events
+# 🪇 事件
 
-## Introduction
+## 一. 导言
 
-The `events` section determines which item/furniture/block will execute predefined behaviors during specific events. Under the `events` section, you need to specify an event trigger, such as `"right_click"` for a right-click action. Below the event trigger, you must pass a list of actions with their corresponding types. For example, `command` executes a specific command.
+"事件" 部分决定哪些项目/家具/块将在特定事件中执行预定义的行为。 在 `events` 部分下，您需要指定一个事件触发器，如"right_click"以便右击动作。 在事件触发器下，您必须传递一个包含相应类型的动作列表。 例如，`command` 执行一个特定的命令。
 
 ```yaml
-# format 1
-events:
+# 格式 1
+事件:
   right_click:
-    - type: command
-      command: say 1
-      conditions:
-        - type: permission
-          permission: "craftengine.admin"
-    - type: command
-      command: say 2
-      conditions: []
-# format 2
-events:
-  - on: right_click
-    functions:
-      - type: command
-        command: say 1
-        conditions:
-          - type: permission
-            permission: "craftengine.admin"
-      - type: command
-        command: say 2
-        conditions: []
+    - 类型: 命令
+      命令: 说 1
+      条件:
+        - 类型: 权限
+          权限: "craftengine. dmin"
+    - 类型: 命令
+      命令: 说 2
+      条件: []
+# 格式 2
+事件:
+  - 在: right_click
+    函数:
+      - 类型: 命令
+        命令: 说 1
+        条件:
+          - 类型: 权限
+            permission: "craftengine. dmin"
+      - 类型：命令
+        命令：说 2
+        条件：[……]
 ```
 
 {% content-ref url="conditions" %}
-[conditions](conditions)
+[conditions](conditions
 {% endcontent-ref %}
 
-## 🧨 Event Triggers
+## :firecacker: 事件触发
 
-### items
+### 项目
 
-- break
-- right\_click
-- left\_click
-- consume
+- 断开
+- 右键\_点击
+- 左\_点击
+- 消耗量
 
-### blocks
+### 封禁
 
-- break
-- place
-- right\_click
-- left\_click
-- step
+- 断开
+- 地点
+- 右键\_点击
+- 左\_点击
+- 步骤
 
-### Furniture
+### 家具：
 
-- break
-- place
-- right\_click
+- 断开
+- 地点
+- 右键\_点击
 
 {% hint style="danger" %}
-Please note that the corresponding events should be placed in the appropriate configuration area. For example, if you want to execute a command when interacting with a piece of furniture, the correct approach is to place the `events` under the `furniture` section, not under your item section.
+请注意相应事件应放置在适当的配置区域。 例如，如果您想要在与一件家具互动时执行一个命令， 正确的方法是将“事件”放在“家具”栏下，而不是放在你的项目栏下。
 
 ```yaml
-items:
-  default:bench:
-    events: # ❌️
-      right_click:
-       - type: command
-    behavior:
-      type: furniture_item
-      furniture:
-        events: # ✅️
-          right_click:
-           - type: command
+项目：
+  默认：基准：
+    事件：# :cross_mark：
+      right_click：
+       - 类型：命令
+    行为：
+      类型：gabure_item
+      家具：
+        事件：# :check_mark_buton：
+          right_click：
+           - 类型：命令
 ```
 
 {% endhint %}
 
-## 🔧 Functions
+## 🔧 函数
 
-### cancel\_event
+### 取消\_事件
 
-Cancels the original event.
+取消原始事件。
 
 ```yaml
-type: cancel_event
+类型：取消事件
 ```
 
-### run
+### 运行
 
-Runs a list of functions in order. It's useful for functions that share the same conditions.
+按顺序运行函数列表。 它对具有相同条件的函数有用。
 
 ```yaml
-type: run
-delay: 0 # optional; number; [default: 0]
-functions: # required; maplist
-  - type: command
-  - type: message
+type: 运行
+延迟: 0 # 可选; 数字; [default: 0]
+函数: # 所需; maplist
+  - 类型: 命令
+  - 类型: 消息
 ```
 
-### command
+### 命令
 
-Runs a command as a player or console.
+作为玩家或控制台运行命令。
 
 ```yaml
-type: command
-command: "say hello <arg:player.name>" # required; stringlist/string
-target: "self" # optional; enum[all,self]/player selector; [default: self]
-as-player: false # optional; [default: false]
+type: 命令
+: "sayhello <arg:player.name>" # 所需; stringlist/string
+target: "self" # 可选; 枚举[所有，自己]/玩家选择器；[默认：自己]
+作为玩家：false # 可选；[默认：false]
 ```
 
-### message
+### 留言
 
-Sends a message/system actionbar message
+发送消息/系统操作栏消息
 
 ```yaml
-type: message
-message: "Hello <papi:player_name>" # required; string list/string
-target: "self" # optional; enum[all,self]/player selector
-overlay: false # optional; [default: false]; false = chat box / true = actionbar
+类型: 消息
+消息: "Hello <papi:player_name>" # 所需; 字符串列表/字符串
+target: "self" # 可选; 枚举[所有，自己]/播放器选择器
+叠加层：false # 可选；[默认：false]；false = 聊天框 / true = 动作栏
 ```
 
-### actionBar
+### 操作栏
 
-Sends an actionbar
+发送操作栏
 
 ```yaml
-type: actionbar
-actionbar: "This is an action bar"  # required; string
-target: "self" # optional; enum[all,self]/player selector; [default: self]
+输入: 操作栏
+操作栏: "这是一个操作条" # 所需; 字符串
+目标："self" # 可选; 枚举[all,self]/播放器选择器; [默认: self]
 ```
 
-### Title
+### 标题
 
-Sends a title
+发送标题
 
 ```yaml
-type: title
-title: "<red>Title</red>"  # required; string
-subtitle: "<Yellow>Subtitle</yellow>" # required; string
-fade-in: 20 # optional; number; [default: 10]
-stay: 10 # optional; number; [default: 20]
-fade-out: 10 # optional; number; [default: 5]
+输入：标题
+title: "<red>Title</red>" # 所需; 字符串
+字幕: "<Yellow>字幕</yellow>" # 所需; 字符串
+淡出: 20 # 可选; 数字; [default: 10]
+保持: 10 # 可选; 数字; [default: 20]
+淡出: 10 # 可选; 数字; [default: 5]
 ```
 
-### open\_window
+### 打开\_窗口
 
-Opens a gui window
+打开界面窗口
 
 ```yaml
-type: open_window #
-gui-type: anvil # required; enum[anvil, enchantment, grindstone, loom, smithing, crafting, cartography];
-title: "Super Anvil"  # optional; string
-target: "self" # optional; enum[all,self]/player selector; [default: self]
+类型: open_window #
+gui-type: anvil, enchanting, grindstone, loom, smites, crafting and captography];
+title: "Super Anvil" # optional; string
+target: "self" # optional; 枚举[all,self]/播放器选择器; [default: self]
 ```
 
-### place\_block
+### 位置\_块
 
-Places a block
+放置一个块
 
 ```yaml
-type: place_block
-block-state: "default:chinese_lantern"
+类型: place_block
+block-state: "default:e_lantern"
 x: <arg:block.block_x>
 y: <arg:block.block_y>
 z: <arg:block.block_z>
 ```
 
-### drop\_loot
+### 掉落\_战利品
 
-Drops loots based on the give loot table
+丢弃根据给定的掠夺表进行的掠夺。
 
 ```yaml
-type: drop_loot
+类型: drop_loot
 x: <arg:block.block_x> + 0.5
 y: <arg:block.block_y> + 0.5
 z: <arg:block.block_z> + 0.5
-loot:
-  pools: ...
+外观:
+  池: ...
 ```
 
-### update\_interaction\_tick
+### 更新\_interaction\_tick
 
-Updates the tick when the last interaction ends
+上次交互结束时更新tick
 
 ```yaml
-type: update_interaction_tick
+类型：update_interaction_tick
 ```
 
-### set\_count
+### 设置\_计数
 
-Sets the count of the current item in this event
+在此事件中设置当前项目的数量
 
 ```yaml
-type: set_count
+类型: set_count
 add: true # Default: false
-count: -1
-target: "self" # optional; enum[all,self]/player selector
+count : -1
+target: "self" # optional; number [all,self]/player selftor
 ```
 
-### set\_food
+### 设置\_food
 
-Sets the food level (0\~20) of the player
+设置玩家的食物水平 (0\~20)
 
 ```yaml
 type: set_food
 add: true
 food: 4
-target: "self" # optional; enum[all,self]/player selector
+target: "self" # optional; 枚举[all,self]/播放器选择器
 ```
 
-### set\_saturation
+### 设置\_饱和度
 
-Sets the saturation(0\~10) of the player
+设置玩家的饱和度(0\~10)
 
 ```yaml
-type: set_saturation
+类型: set_satarity
 add: true
 saturation: 2.5
-target: "self" # optional; enum[all,self]/player selector
+target: "self" # optional; 枚举[all,self]/播放器选择器
 ```
 
-### swing\_hand
+### 游泳\_hand
 
-Swings the hand involved in this event or the hand specified in config
+将这个事件所涉及的手或配置中指定的手转换。
 
 ```yaml
-type: swing_hand
-hand: main_hand # Optional Argument
+类型：swing_hand
+hand：main_hand # 可选参数
 ```
 
-### particle
+### 粒子
 
-Spawns a particle
+生成粒子
 
 ```yaml
-type: particle
-particle: minecraft:end_rod
+type: partile
+parcle: minecraft:end_rod
 x: "<arg:position.x>"
 y: "<arg:position.y>"
 z: "<arg:position.z>"
-count: 5
-offset-x: 0.3
-offset-y: 0.3
-offset-z: 0.3
-speed: 0
+count : 5
+offset-x: 0.
+偏移：0.3
+偏移：0。
+速度: 0
 
-# The following arguments are only effective
-# when the particles are of a certain type.
+# 以下参数只是有效的
+# 当粒子是某一类型的时候。
 
-# item
-item: default:chinese_lantern
+# 项目
+item: default:e_lantern
 
 # block/falling_dust/dust_pillar/block_crumble/block_marker
 block-state: default:plam_log[axis=y]
 
 # charge
-charge: 1.5
+charge: 1。
 
 # shriek
 shriek: 1
 
-# dust
-color: 255,255,255
-scale: 1.0
+# 粉尘
+颜色：255,255,255
+缩放： 1。
 
 # dust_color_transition
-from: 255,255,255
-to: 0,0,0
-scale: 4.0
+from : 255 255
+to 0,0
+scale : 4.
 
-# vibration
-target-x: 0
+# 振动
+目标x: 0
 target-y: 1
 target-z: 0
 arrival-time: 10
 
-# trail
+# Tracil
 target-x: 0
 target-y: 1
 target-z: 0
-duration: 10
+dur: 10
 ```
 
-### potion\_effect
+### 药水\_效果
 
-Adds a potion effect
+添加药水效果
 
 ```yaml
-type: potion_effect
-potion-effect: minecraft:blindness
-duration: 20  # Default: 20
-amplifier: 0   # Default: 0
-ambient: false # from beacon
-particles: true
+输入：药水效果
+药水效果：minecraft:盲目
+持续时间： 20 # 默认值： 20
+扩音器： 0 # 默认值： 0
+环境： false # 来自信标
+粒子： true
 ```
 
-### remove\_potion\_effect
+### 移除\_药水\_效果
 
-Removes a potion effect
+移除药水效果
 
 ```yaml
-type: remove_potion_effect
-potion-effect: minecraft:blindness # Optional if 'all' is true
-all: false  # Default: false
+类型: remove_potion_effect
+pottion-effect: minecraft:lindness # 可选，如果'all' 是真的
+所有: false # 默认值: false
 ```
 
 ### leveler\_exp
 
-Adds skill/job experience
+添加技能/工作经验
 
 {% content-ref url="../compatibility/supported-levelers" %}
-[supported-levelers](../compatibility/supported-levelers)
+[supported-levelers](../compatibility/supported-levels)
 {% endcontent-ref %}
 
 ```yaml
-type: leveler_exp
-plugin: AuraSkills  # The leveler plugin
-leveler: fishing  # the job/skill id
-count: 10  # the amount of exp to give
+类型: level_exp
+插件: AuraSkill# 级别插件
+级别: 钓鱼# 工作/技能id
+计数: 10 # 要给予的exp 数量
 ```
 
-### set\_cooldown
+### 设置\_冷却时间
 
-Sets cooldown for player
+设置玩家的冷却时间
 
 ```yaml
-type: set_cooldown
-time: 1m30s
-id: my_cooldown_id
-add: false  # Default: false  (Whether to accumulate cooldown time)
+类型: set_coldown
+时间: 1m30s
+id: my_courdown_id
+add: false # 默认值: false (Whether 以累积冷却时间)
 ```
 
-### remove\_cooldown
+### 移除\_冷却时间
 
-Removes cooldown for player
+移除玩家的冷却时间
 
 ```yaml
-type: remove_cooldown
-id: my_cooldown_id  # Optional if 'all' is true
-all: false  # Default: false
+类型: remove_coldown
+id: my_coldown_id # 可选，如果'all' 是真的
+所有: false # 默认值: false
 ```
 
-### play\_sound
+### 播放\_声音
 
-Plays a sound
+播放声音
 
 ```yaml
 type: play_sound
@@ -357,5 +357,5 @@ source: master
 ```
 
 {% hint style="warning" %}
-More functions are coming...
+更多功能即将到来...
 {% endhint %}
