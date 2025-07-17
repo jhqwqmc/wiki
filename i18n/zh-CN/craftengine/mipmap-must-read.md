@@ -1,8 +1,8 @@
 # 🗺️ Mipmap \[MUST READ]
 
-## Introduction
+## 一. 导言
 
-Mipmap determines the anti-aliasing level in Minecraft. Below is a comparison of the differences between Mipmap level 4 and level 0.
+Mipmap 决定Minecraft中的抗锯齿水平。 下面是Mipmap 4级和0级之间差异的比较。
 
 <figure><img src="https://1836335287-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FOgvQ1fEJPROp7131PPlK%2Fuploads%2FodziDESugHu27t1CRnHd%2Fimage.png?alt=media&#x26;token=0c20f995-a097-4fc6-8c4a-1b25e77d7a43" alt=""><figcaption><p>mipmap: 4</p></figcaption></figure>
 
@@ -10,25 +10,25 @@ Mipmap determines the anti-aliasing level in Minecraft. Below is a comparison of
 
 Under what circumstances will Mipmap be reduced due to a resource pack?&#x20;
 
-Generally, the Mipmap level will decrease when the width and height of a model texture do not meet the requirement of being a power of 2. Dimensions such as 16x16, 32x16, and 128x32 are valid, while sizes like 15x15, 1x7, and 29x37 are considered invalid (Note: font images are exempt from this restriction).
+一般情况。 当模型纹理的宽度和高度不符合2功率要求时，Mipmap 水平将会下降。 16x16、32x16和128x32等尺寸是有效的，而大小为 15x15，1x7 和 29 x37 被视为无效(注：字体图像不受此限制)。
 
 {% hint style="success" %}
-If you don't want to fix those badly made textures, you can enable the plugin's **obfuscation** option, which will automatically fix the mipmap for you. It's incredibly simple! At the same time, the plugin will automatically separate font images that should not be placed within the atlas path to prevent them from polluting the Mipmap.
+如果您不想修复那些制造不良的纹理， 您可以启用插件的 **obfuscation** 选项，这将自动为您修复mipmap 。 这是非常简单的！ 同时， 插件将自动分离不应放在地图集路径内的字体图像以防止它们污染Mipmap。
 
-**However, please note that the plugin will not fix textures that come with .mcmeta files.**
+**不过请注意，插件将不会修复带有.mcmeta 文件的纹理。**
 
 ```yaml
 #config.yml
-resource-pack:
-  protection:
-    obfuscation:
-      enable: true
-      resource-location:
-        enable: true
+资源包：
+  保护：
+    obfuscation：
+      已启用：true
+      资源位置：
+        已启用：true
 ```
 
 {% endhint %}
 
 {% hint style="warning" %}
-When you notice Mipmap issues in your client, please open your client logs! They will tell you what caused the Mipmap level to decrease. `Texture xxx:xxx with size xxx limits mip level from 4 to 0`
+当您注意到您客户端中的Mipmap 问题时，请打开您的客户端日志！ 他们会告诉你什么导致Mipmap 水平下降。 `纹理 xxx:xxx 大小为 xxx 限制 mip 级别从 4 到 0`
 {% endhint %}
